@@ -168,21 +168,81 @@ You are a presentation expert.
 Convert the following document into a Microsoft PowerPoint presentation using various layouts based on content type.
 
 Supported layouts:
+- Title Only
 - Title Slide
 - Section Header
 - Title and Content
 - Two Content
 - Comparison
-- Picture with Caption
-- Title and Table
+- Content/Image with Caption
+- Title with Table
 
 Return a JSON list of slides like this:
-{{
-  "layout": "Title and Content",
-  "title": "Title here",
-  "content": ["Definition", "How it works"],
-  "image_path": "/path/to/image.png"  ← Only include this if image was present on that page
-}}
+{
+  {
+    "layout": "title_only",
+    "title": "max 60 characters"
+  },
+  {
+    "layout": "title_slide",
+    "title": "max 60 char",
+    "sub-heading": "sub-heading(max 250 characters)"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "title(max 65 characters)",
+    "content": "approax 1250 character if sentence cross the more than 80 character enter new line"
+  },
+  {
+    "layout": "two_content",
+    "title": "max 65 characters",
+    "content": "450 to 460 max character if sentence cross the more than 37 character enter new line"
+  },
+  {
+    "layout": "section_header",
+    "title": "max 60 char",
+    "sub_heading": "270 character if sentence exceed the 90 character use new line"
+  },
+  {
+    "layout": "comparison",
+    "title": "max 60 char",
+    "left_content": {
+      "title": "max 36 characters",
+      "content": "max 360 characters if sentence exceed 30 charcters use new line"
+    },
+    "right_layout": {
+      "title": "max 36 characters",
+      "content": "max 360 characters if sentence exceed 30 charcters use new line"
+    }
+  },
+  {
+    "layout": "content_with_caption",
+    "content": {
+      "title": "max 60 chracters if the sentence exceed 30 character enter new line",
+      "content": "max 630 characters if sentence exceed 45 charcters use new line"
+    },
+    "chart/smart3D_icon": "properties of this thing goes here"
+  },
+  {
+    "layout": "image_with_caption",
+    "image_path": "image_path_goes_here",
+    "title": "max 60 characters",
+    "content": "max 300 characters"
+  },
+  {
+    "layout": "title_with_table",
+    "title": "Budget Status",
+    "table": {
+      "headers": ["Category", "Budgeted Amount", "Actual Spend", "Variance"],
+      "rows": [
+        ["Hardware", "$150,000", "$140,000", "$10,000"],
+        ["Software", "$100,000", "$95,000", "$5,000"],
+        ["Labor", "$200,000", "$210,000", "-$10,000"],
+        ["Training", "$50,000", "$45,000", "$5,000"]
+      ]
+    }
+  }
+}
 
 Only include image_path if it was explicitly mentioned as [IMAGE_PATH: ...] in the source.
 
@@ -215,5 +275,5 @@ def convert_pdf_to_slide_json(pdf_path, output_json_path="slides.json"):
     print("✅ Done.")
 
 # === USAGE ===
-pdf_path = "pdf.pdf"
+pdf_path = "pdf1.pdf"
 convert_pdf_to_slide_json(pdf_path)

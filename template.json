@@ -1,0 +1,65 @@
+[
+  {
+    "layout": "title_only",
+    "title": "max 60 characters"
+  },
+  {
+    "layout": "title_slide",
+    "title": "max 60 char",
+    "sub-heading": "sub-heading(max 250 characters)"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "title(max 65 characters)",
+    "content": "approax 1250 character if sentence cross the more than 80 character enter new line"
+  },
+  {
+    "layout": "two_content",
+    "title": "max 65 characters",
+    "content": "450 to 460 max character if sentence cross the more than 37 character enter new line"
+  },
+  {
+    "layout": "section_header",
+    "title": "max 60 char",
+    "sub_heading": "270 character if sentence exceed the 90 character use new line"
+  },
+  {
+    "layout": "comparison",
+    "title": "max 60 char",
+    "left_content": {
+      "title": "max 36 characters",
+      "content": "max 360 characters if sentence exceed 30 charcters use new line"
+    },
+    "right_layout": {
+      "title": "max 36 characters",
+      "content": "max 360 characters if sentence exceed 30 charcters use new line"
+    }
+  },
+  {
+    "layout": "content_with_caption",
+    "content": {
+      "title": "max 60 chracters if the sentence exceed 30 character enter new line",
+      "content": "max 630 characters if sentence exceed 45 charcters use new line"
+    },
+    "chart/smart3D_icon": "properties of this thing goes here"
+  },
+  {
+    "layout": "image_with_caption",
+    "image": "image_path_goes_here",
+    "title": "max 60 characters",
+    "content": "max 300 characters"
+  },
+  {
+    "layout": "title_with_table",
+    "title": "Budget Status",
+    "table": {
+      "headers": ["Category", "Budgeted Amount", "Actual Spend", "Variance"],
+      "rows": [
+        ["Hardware", "$150,000", "$140,000", "$10,000"],
+        ["Software", "$100,000", "$95,000", "$5,000"],
+        ["Labor", "$200,000", "$210,000", "-$10,000"],
+        ["Training", "$50,000", "$45,000", "$5,000"]
+      ]
+    }
+  }
+]

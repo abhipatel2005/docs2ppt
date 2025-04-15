@@ -1,0 +1,407 @@
+[
+  {
+    "layout": "title_only",
+    "title": "PREVALENCE OF DEPRESSION AND BURNOUT"
+  },
+  {
+    "layout": "title_slide",
+    "title": "PREVALENCE OF DEPRESSION AND BURNOUT",
+    "sub-heading": "IN OLD AGE HOME INDIVIDUALS: A CROSS SECTIONAL STUDY"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Introduction",
+    "content": "Aging is a natural process that comes with various physical, social, and psychological changes. Throughout the 20th century, the number of older individuals in both developed and developing countries has significantly risen.\n\nThe global population is undergoing a notable shift towards aging. This trend is also apparent in correctional facilities around the world. Human life comprises five distinct stages: infancy, childhood, adolescence, adulthood, and old age, each presenting its own unique challenges. Old age, in particular, is a universal experience marked by physical decline, social isolation, and a range of health issues.\n\nGeriatrics is concerned with the medical care of older adults, whereas gerontology examines the physical and psychological changes that come with aging. India is experiencing a demographic shift, marked by a growing elderly population (aged 60 and above) as a result of lower mortality rates, decreased fertility, and increased life expectancy."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Aging",
+    "content": "A gradual diminution in physiological capacity of various systems like musculoskeletal, cardiovascular, neuropsychiatry and immune.\n\nAn increase in prevalence of diseases like arthritis, hypertension, stroke, dementia, and infectious diseases.\n\nA reduction in functional capacity.\n\nObesity, falls, social isolation and depression.\n\nChronic disability.\n\nDeath."
+  },
+  {
+    "layout": "image_with_caption",
+    "image_path": "image_path_goes_here",
+    "title": "Relationships Between Disease, Disability and Death",
+    "content": "Schematic presentation of relationships between disease, disability and death (2)."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "THEORIES OF AGING",
+    "content": "(2)"
+  },
+  {
+    "layout": "title_slide",
+    "title": "Understanding the Elderly",
+    "sub-heading": "Definitions, Classifications, and Demographic Trends"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Defining the Elderly",
+    "content": "Conventionally, elderly refers to those 65+ years old. However, health issues can begin in the 40s/50s, while others stay active into their 70s.\n\nTherefore, defining this demographic hinges on health status, marked by multiple health issues and unusual illness presentations like confusion, falls, and mobility/functional decline.\n\nHealthcare focus shifts from primary prevention to secondary prevention and chronic disease management. Categorization into smaller age groups aids in addressing evolving patient care goals."
+  },
+  {
+    "layout": "section_header",
+    "title": "Classification of the Elderly",
+    "sub_heading": "Breaking down the elderly population into more manageable age groups based on health status and life expectancy allows for tailored care and support."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Young-Old (65-75)",
+    "content": "Individuals in this age range often have similarities with middle-aged individuals, usually experiencing little to no disability.\n\nConsidering their life expectancy is around 15 to 20 years, they are in a relatively stable phase of life."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Middle-Old (75-85)",
+    "content": "During this stage of life, chronic health conditions frequently arise, and life expectancy tends to decrease, with fewer additional years anticipated."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Old-Old (85+)",
+    "content": "This category consists of individuals who are older than 85 years. \n\nConsidering their limited life expectancy, which is around 5 to 6 more years."
+  },
+  {
+    "layout": "image_with_caption",
+    "image_path": "pdf_images\\page_4.png",
+    "title": "Age Group Breakdown",
+    "content": "Visual representation of the distribution of elderly individuals across the three age groups, highlighting the increasing prevalence of health concerns with age."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Demographic Trends: Global and Indian",
+    "content": "Countries face a significant increase in aging populations, creating strain on the working-age demographic.\n\nIndia (2011 data):\nProportion of elderly population – 8.2%\nGeriatric population growth rate – 1.9%\nOld age dependency ratio – 14.2\nPhysically disabled elderly – 5177 per 1 lakh."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Factors Driving Demographic Changes",
+    "content": "Progress in medical science\nAdoption of healthier habits\nGreater access to healthcare services\nSignificant decrease in perinatal and infant mortality rates\nContinuous drop in death rate from infectious diseases\nImproved health prior to age 65\nEnhanced sanitation and nutrition standards\nStrengthened economy\nIncreased engagement in own health\nReadily available information\nSocietal emphasis on youthfulness\nDesire to take an active role\nAspiration to promote health\nCuriosity about innovative approaches"
+  },
+  {
+    "layout": "title_slide",
+    "title": "HEALTHY AGING",
+    "sub-heading": "Key factors for healthy aging."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "DEPRESSION",
+    "content": "It is a mood disorder resulting from persistent feelings of sadness, hopelessness, and lack of interest or pleasure in previously enjoyed activities.\n\nIt affects how a person thinks, feels, and behaves; it can lead to a variety of emotional and physical problems. \n\nThe functions of daily life such as work, relationships, and other aspects of life experience an interference."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Symptoms of Depression",
+    "content": "Common symptoms include persistent sadness or low mood, irritability, the loss of interest in activities, fatigue, a change in appetite or sleep, feelings of worthlessness or guilt and difficulty concentrating leading to thoughts of death or suicide."
+  },
+  {
+    "layout": "image_with_caption",
+    "image_path": "pdf_images\\page_7.png",
+    "title": "Symptoms of Depression",
+    "content": "Illustration of common depression symptoms."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "BURNOUT",
+    "content": "Persistent stress, especially in work environments, results in a number of emotional, physical, and psychological exhaustion known as 'burnout.'\n\nIt primarily manifests as feelings of energy depletion or exhaustion, an increased mental distance from one's job, and a sense of ineffectiveness or lack of accomplishment.\n\nBurnout can lead to lower performance and has negative effects on the person's well-being."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Symptoms of Burnout",
+    "content": "The three main symptoms of burnout are emotional exhaustion, depersonalization, and reduced personal accomplishment.\n\nThis can cause feelings of frustration, cynicism, and lack of motivation, leaving many affected individuals unable to cope with stress."
+  },
+  {
+    "layout": "image_with_caption",
+    "image_path": "pdf_images\\page_8.png",
+    "title": "Symptoms of Burnout",
+    "content": "Visual representation of Burnout Symptoms."
+  },
+  {
+    "layout": "image_with_caption",
+    "image_path": "pdf_images\\page_9.png",
+    "title": "Symptoms of Burnout",
+    "content": "Graphical symptoms of Burnout."
+  },
+  {
+    "layout": "title_only",
+    "title": "NEED OF STUDY"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "NEED OF STUDY",
+    "content": "There is a need to investigate the prevalence of depression and burnout among individuals residing in old age home, as this vulnerable population may be at increased risk due to factors such as social isolation, loss of loved ones, elder abuse and declining health. This study will help to understand the magnitude of this issue (i.e: depression and burnout) and encourage the health care professionals for development of targeted interventions and improve the mental health and well-being of this population."
+  },
+  {
+    "layout": "title_only",
+    "title": "AIMS AND OBJECTIVES"
+  },
+  {
+    "layout": "title_only",
+    "title": "Aims and Objectives"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Aims",
+    "content": "To study the prevalence of depression and burnout among individuals residing in old age home."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Objectives",
+    "content": "1. To evaluate prevalence of depression among old age home individuals using geriatric depression scale.\n\n2. To evaluate prevalence of burnout among old age home individuals using maslach burnout inventory."
+  },
+  {
+    "layout": "title_only",
+    "title": "Hypothesis"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Hypothesis",
+    "content": "NULL HYPOTHESIS (H0):\nThere is a no significant prevalence of depression among individuals residing in old age homes. (H₀ a)\nThere is a no significant prevalence of burnout among individuals residing in old age homes. (H₀ b)\nALTERNATIVE HYPOTHESIS (H1):\nThere is a significant prevalence of depression among individuals residing in old age homes.( H1 a)\nThere is a significant prevalence of burnout among individuals residing in old age homes.( H1 b)"
+  },
+  {
+    "layout": "title_slide",
+    "title": "Review of Articles",
+    "sub-heading": "A summary of key findings from recent studies on depression and burnout among healthcare professionals."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Depression Prevalence Among Elderly in India (Pilania et al, 2019)",
+    "content": "Pilania et al. (2019) reviewed 51 studies from 16 Indian states, estimating depression prevalence among the elderly at 34.4% (95% CI: 29.3–39.7). \n\nPrevalence was higher among females, rural populations, and in eastern India. Non-probability sampling and specific screening tools (GDS, CES-D) showed higher prevalence. Excluding smaller or low-quality studies did not change the estimate.\n\nExclusion of dementia cases prior to assessment resulted in lower depression prevalence. The authors concluded that about one-third of the Indian elderly population suffers from depression, particularly women.\n\nThe estimates varied based on study tools, geography, sampling, and dementia presence. Caution is advised when interpreting the pooled estimate due to methodological variations and screening tool differences across the included studies."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout in Medical/Surgical Residents (Low et al, 2019)",
+    "content": "Low et al. (2019) conducted a meta-analysis and found the aggregate burnout prevalence at 51.0% in 22,778 residents. Meta-regression showed that mean age (β = 0.34, 95% CI: 0.28–0.40, p < 0.001) and the proportion of males (β = 0.4, 95% CI = 0.10–0.69, p = 0.009) were significant moderators.\n\nRadiology (77.16%), neurology (71.93%), and general surgery (58.39%) had the highest burnout prevalence. Psychiatry (42.05%), oncology (38.36%), and family medicine (35.97%) had the lowest.\n\nBurnout prevalence in Asian countries was 57.18%, in European countries 27.72%, and in North America 51.64%. The authors concluded that burnout is highly prevalent among medical/surgical residents. Older and male residents were more affected."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Global Burnout Among Nurses (Woo et al, 2020)",
+    "content": "Woo et al. (2020) analyzed 113 studies and conducted a meta-analysis of 61 studies, encompassing 45,539 nurses across 49 countries. The overall pooled-prevalence of burnout symptoms among global nurses was 11.23%.\n\nSignificant differences were noted between geographical regions, specialties, and burnout measurement methods. Sub-Saharan Africa showed the highest burnout prevalence, while Europe and Central Asia had the lowest. Pediatric nurses had the highest prevalence among specialties, while geriatric care nurses had the lowest.\n\nThis study is the first to synthesize published studies and estimate pooled-prevalence of burnout symptoms among nurses globally. The authors concluded that high burnout prevalence warrants attention and implementation of interventions to improve nurses’ work conditions and healthcare quality."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout Among Intensive Care Physicians (Sanfilippo et al, 2020)",
+    "content": "Sanfilippo et al. (2020) reviewed 31 studies describing burnout in ICU staff. Five focused solely on physicians, and 12 others provided separate physician data. Burnout prevalence varied greatly (18% - 49%), but methodological discrepancies (cut-off criteria, Likert scale variability) precluded pooled analysis.\n\nThe authors concluded that burnout syndrome prevalence among ICU physicians is relatively high, but methodological heterogeneities necessitate cautious interpretation.\n\nThe need for a consensus recommending consistent use of the Maslach Burnout Inventory test is urgent to accurately screen burnout in ICU physicians."
+  },
+  {
+    "layout": "title_only",
+    "title": "Prevalence & Incidence: Depression & Burnout Studies"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Depression Prevalence Over Time: Meta-Analysis",
+    "content": "19 studies examined changes in depression prevalence over time.\nMeta-analysis of 17 studies showed a significant increasing trend:\n*   Pooled Odds Ratio (OR): 1.35 (95% CI: 1.14, 1.61)\n*   Similar effects observed for both females and males.\n*   High heterogeneity across studies remained unexplained.\n*   No evidence of publication bias was found.\n\nConclusion: Depression is increasingly prevalent, and study design differences or publication bias do not fully account for this trend."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Depression in Older Adults: Systematic Review & Meta-Analysis",
+    "content": "Yosef Zenebe et al. (2021) reviewed depression prevalence in older adults.\n*   Analyzed 42 studies with 57,486 elderly participants.\n*   Average expected prevalence: 31.74% (95% CI 27.90, 35.59).\n\nSubgroup analysis revealed:\n*   Higher prevalence in developing countries (40.78%) vs. developed countries (17.05%).\n*   Higher prevalence with Geriatric Depression Scale-30 (GDS-30) (40.60%) compared to GMS (18.85%).\n*   Higher prevalence in studies with smaller sample sizes (40.12%) than larger sample sizes (20.19%).\n\nConclusion: High depression prevalence in older adults warrants proactive measures by healthcare professionals and policymakers."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout Syndrome During COVID-19: Radiologists Study",
+    "content": "A. Oprisan et al. (2022) examined burnout in radiologists during COVID-19.\n*   Burnout significantly increased during the pandemic (49.3% vs. 33.6%, p = 0.002).\n*   No correlations found between burnout and gender, age, call frequency, experience, income, teaching, marital status, number of children, or contract type.\n*   No risk or protective factors valid both before and after the pandemic were identified. \n*   No correlations were identified between sociodemographic or work-related characteristics and burnout syndrome.\n\nConclusion: The study emphasizes the need for support for the professional wellbeing of radiologists in Spain."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout Prevalence in Switzerland: Point Prevalence Study",
+    "content": "Y. Shoman et al. (2022) assessed burnout prevalence in Switzerland.\n*   Identified 23 studies on workers in Switzerland.\n*   Clinical or severe burnout prevalence: 4% (95% CI 2–6%).\n*   Average prevalence:\n    *   Overall burnout: 18% (95% CI 12–25%)\n    *   Emotional exhaustion: 18% (95% CI 15–22%)\n*   Clinical/severe burnout was higher among healthcare workers compared to the general working population.\n*   Estimates of pre-pandemic burnout are comparable to other countries where burnout is recognized as a disease.\n\nConclusion: The results may prove useful in planning and assessing the effectiveness of interventions for prevention of occupational burnout and in minimising its negative consequences on individuals and on societies during and after the pandemic."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout Prevalence Among Psychiatrists: Meta-Analysis",
+    "content": "K.V. Bykov et al. (2022) conducted a meta-analysis on burnout in psychiatrists.\n*   Included 36 studies with 5481 participants.\n*   Prevalence of overall burnout:\n    *   25.9% (MBI)\n    *   50.3% (CBI)\n*   Pooled prevalence for MBI subscales:\n    *   High emotional exhaustion (EE): 43.5%\n    *   High depersonalization (DP): 28.2%\n    *   Low personal accomplishment (PA): 32.4%\n*   European psychiatrists showed lower EE scores compared to non-European psychiatrists.\n\nConclusion: Burnout is highly prevalent among psychiatrists. Future research needed on screening, predictors, and effective interventions."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout Among Nursing Students: Systematic Review",
+    "content": "L.N. Kong et al. (2023) examined burnout in nursing students.\n*   21 studies included, involving 10,861 students.\n*   Pooled prevalence of burnout: 23.0% (95% CI = 15.6–30.5%).\n*   Pooled prevalence of subscales:\n    *   Emotional exhaustion: 47.1%\n    *   Depersonalization: 32.2%\n    *   Reduced personal accomplishment: 43.5%\n*   Associated factors included: demographic, educational, physical, and psychological.\n\nConclusion: Burnout is common in nursing students. Early screening and interventions are crucial for prevention and reduction."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Depression & Drug Use in Elderly in Kathmandu",
+    "content": "R.K. Rokaya et al. (2023) studied depression and drug use in elderly living in old age homes in Kathmandu.\n*   Out of 150 respondents, 25 were normal, 98 had mild and 27 had severe depression.\n*   Age distribution: 7.33% (60-64yrs), 10.66% (65-69 yrs), 31.33% (70-79 yrs), 51.33 (> 80 yrs).\n*   100% regularly used drugs, averaging >21 drug classes.\n*   Common drug classes: antihypertensives, vitamins, cardiac drugs, cardiovascular dilators, laxatives, tranquilizers, diuretics.\n*   Less common: sedatives, hypnotics, antidepressants, anti-arrhythmic drugs, pulmonary drugs, antacids, antisecretory agents.\n"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout in Healthcare Workers: A Global Perspective",
+    "content": "V.V. Botiakova (2023) studied burnout in healthcare workers in North and South America, and Asia (2018-2022).\n*   Burnout prevalence ranged from 1.3% to 82.1%.\n*   Prevalence in North and South America varied from 1.3% to 73.5%."
+  },
+  {
+    "layout": "title_slide",
+    "title": "Burnout and Depression Prevalence Studies",
+    "sub-heading": "A Review of Recent Research Findings"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Overview of Burnout Prevalence",
+    "content": "Studies show burnout prevalence varies across regions and professions. \nIn Asia, rates ranged from 1.3% to 82.1%. \nNorth and South America had rates between 1.3% and 73.5%. Asia showed higher variability. \nHigh-risk groups include intensivists, oncologists, and emergency medicine physicians. \nResearch highlights the need for interventions to address burnout."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Study on Older Adults in Rural Odisha (2023)",
+    "content": "Annu Antony et al. (2023) studied burnout in rural Odisha.\nThe sample included 520 older adults, with 497 eligible.\nThe non-response rate was 3.6%, achieving 96.4% coverage (479).\nGender distribution was nearly equal (55.8% women, 44.2% men).\n73% were in the 60-74 age group, and 7% were > 85 years.\n59.5% resided in joint families, and 66.2% lived with spouses.\nMost were illiterate (41.9%), unemployed (52.4%), and had low socioeconomic status (53.2%).\n48.5% had medical conditions."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout Among Medical and Surgical Residents",
+    "content": "A study found burnout prevalence of 51.64% (46.96–56.28) in North America.\nFindings suggest high burnout among medical and surgical residents.\nOlder and male residents experienced more burnout than their counterparts."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Global Burnout Symptoms Among Nurses (2020)",
+    "content": "T Woo et al. (2020) studied global burnout in nurses. \nBurnout is now recognized as an “occupational phenomenon” (ICD-11).\nNurses struggle with burnout, impacting patients, colleagues, and organizations.\nMeta-analysis examined burnout prevalence in nurses worldwide.\n113 studies reviewed, 61 included in meta-analysis (45,539 nurses, 49 countries).\nOverall pooled-prevalence was 11.23%. \nSignificant differences existed between regions, specialties, and measurements.\nSub-Saharan Africa had highest, Europe and Central Asia had lowest burnout.\nPediatric nurses had highest, geriatric care nurses had lowest burnout.\nThe study suggests nurses have high burnout, warranting attention and action."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout Among Intensive Care Physicians (2020)",
+    "content": "Filippo Sanfilippo et al. (2020) studied burnout in ICU physicians. \n31 studies were included with various healthcare profiles.\n5 focused solely on physicians, 12 included physicians with separate data.\nBurnout prevalence varied (18% - 49%), but methodological discrepancies made pooled analysis difficult.\nCut-off criteria for defining burnout and Likert scale variability were factors."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout Syndrome in ICU Physicians",
+    "content": "Burnout prevalence is relatively high among ICU physicians.\nMethodological heterogeneities require caution when interpreting results.\nReported burnout levels seem higher than in studies investigating mixed ICU personnel.\nThere's an urgent need for consistent Maslach Burnout Inventory use to screen burnout and provide precise figures."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Global Trends in Depression (2021)",
+    "content": "D Moreno-Agostino et al. (2021) studied global depression trends.\n19 studies provided information on changes in depression prevalence.\nPooled odds ratio (OR) was 1.35 (95% CI: 1.14, 1.61).\nSimilar pooled effects were observed for females and males.\nHigh heterogeneity across studies remained unexplained.\nNo evidence of publication bias was found.\nThere's an increasing trend in the likelihood of experiencing depression."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Depression Among Older Adults (2021)",
+    "content": "Yosef Zenebe et al. (2021) studied depression in older adults.\nReview of 1263 articles identified 42 relevant studies (n = 57,486).\nAverage expected prevalence of depression was 31.74% (95% CI 27.90, 35.59).\nSub-group analysis: developing countries (40.78%), developed countries (17.05%).\nGDS-30: 40.60%, GMS: 18.85%. Smaller sample size: 40.12%, larger: 20.19%.\nHigh depression prevalence among older adults worldwide.\nEarly warning and advised health professionals, policymakers to take action."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout Syndrome During COVID-19 Pandemic (2022)",
+    "content": "A oprisan et al. (2022) studied burnout during the COVID-19 pandemic.\nBurnout significantly increased in radiologists, affecting nearly half of respondents.\nThese results highlight the need to assess support for radiologists' professional wellbeing."
+  },
+  {
+    "layout": "title_slide",
+    "title": "Burnout Syndrome Research",
+    "sub-heading": "Analysis of Prevalence and Methodologies"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout in Spain: A COVID-19 Impact",
+    "content": "A study in Spain found no correlation between burnout and factors like gender, age, income, or marital status.\n\nHowever, the prevalence of burnout significantly increased during the COVID-19 pandemic (49.3% vs. 33.6%, p = 0.002).\n\nNo consistent risk or protective factors were identified before and after the pandemic.\n\nSociodemographic and work-related characteristics also showed no correlation with burnout syndrome."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout Prevalence in Switzerland (2022)",
+    "content": "A 2022 study (Y shoman et.al) examined burnout prevalence in Switzerland.\n\nAnalysis of 23 studies indicated:\n\n*   Clinical or severe burnout: 4% (95% CI 2–6%)\n*   Overall burnout: 18% (95% CI 12–25%)\n*   Emotional exhaustion: 18% (95% CI 15–22%)\n\nHealthcare workers showed higher rates of severe burnout compared to the general working population.\n\nThese findings are comparable to pre-pandemic levels in countries where burnout is recognized as a disease."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Burnout Among Psychiatrists (2022)",
+    "content": "A meta-analysis (KV Bykov et.al, 2022) investigated burnout prevalence among psychiatrists.\n\nThirty-six studies (5481 participants) were included. Results:\n\n*   Overall burnout (MBI): 25.9% [11.1%–40.7%]\n*   Overall burnout (CBI): 50.3% [30.9%–69.8%]\n*   High emotional exhaustion: 43.5% [27.9%–59%]\n*   High depersonalization: 28.2% [17.5%–38.9%]\n*   Low personal accomplishment: 32.4% [3.4%–61.3%]\n\nEuropean psychiatrists reported lower emotional exhaustion scores than non-European colleagues.\n\nThe study concluded that burnout is highly prevalent among psychiatrists, calling for further research on screening, predictors, and intervention strategies."
+  },
+  {
+    "layout": "section_header",
+    "title": "Methodology Overview",
+    "sub_heading": "A look at the study design, sample, data sources, duration, and sampling approach for this research project."
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Study Design and Sample Size",
+    "content": "1. Study design: A cross-sectional study\n\n2. Sample size: n = 120\n\n   Formula: 𝑛 = \\frac{𝑍2 ⋅𝜎2}{𝐸2}"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Data Sources and Study Duration",
+    "content": "3. Source of data: The study will be conducted in the following places:\n\n*   Sandhya Old age home , Irana\n*   Anand Old age home , nanikadi\n*   Old age home , Kalyanpura\n*   Swarg Old age home\n*   Shiv Home Care\n*   Krishna Old age home\n\n4. Study duration: 6 months"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Sampling Technique",
+    "content": "5. Sampling technique: Consecutive sampling technique"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Inclusion and Exclusion Criteria",
+    "content": "Inclusion criteria:\n\n*   Age: adults aged ≥ 65 years\n*   Subjects diagnosed with hypertension and diabetes mellitus\n*   Both male and female\n*   Willingness to participate"
+  },
+  {
+    "layout": "title_only",
+    "title": "Exclusion Criteria"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Exclusion Criteria Details",
+    "content": "Subjects with cognitive impairment\nSubjects with cardiopulmonary, musculoskeletal, or neurological disorders (e.g., Parkinson’s, stroke, multiple sclerosis, head injury) that may affect functional mobility.\nSubjects on anti-depressant / tranquilizer drugs within the last year.\nSubjects with visual or hearing problems.\nSubject diagnosed with severe psychological disorder within the last year.\nRecent injury or surgery: individuals who have undergone recent major surgery or experienced a significant injury that may affect their ability to participate within the last year.\nSubject going on any Psychological counselling session.\nSubjects with a history of substance abuse"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Materials and Apparatus",
+    "content": "Pen / Pencil\nPaper\nWriting pad\nCalculator\nChair\nTable\nSubject information sheet\nAssessment form\nConsent form (Gujarati and English)"
+  },
+  {
+    "layout": "title_only",
+    "title": "Scales Used"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Scales",
+    "content": "Geriatric Depression Scale (GDS)\nMaslach Burnout Inventory (MBI)"
+  },
+  {
+    "layout": "image_with_caption",
+    "image_path": "pdf_images\\page_29.png",
+    "title": "Tools",
+    "content": "Photograph No: 1 showing the tools used in the study."
+  },
+  {
+    "layout": "image_with_caption",
+    "image_path": "pdf_images\\page_30.png",
+    "title": "Consent Forms",
+    "content": "Photograph No: 2 displaying consent forms and data collection sheets."
+  },
+  {
+    "layout": "title_only",
+    "title": "Outcome Measures"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Geriatric Depression Scale (GDS)",
+    "content": "Reliability: 0.80 to 0.90\nValidity: 80% to 90%"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Maslach Burnout Inventory (MBI)",
+    "content": "Reliability: 0.70 to 0.90\nValidity: 0.70 to 0.90"
+  },
+  {
+    "layout": "title_slide",
+    "title": "Methods for Assessment",
+    "sub-heading": "Depression and Burnout Screening Tools"
+  },
+  {
+    "layout": "section_header",
+    "title": "Assessing Depression",
+    "sub_heading": "Using the Geriatric Depression Scale (GDS)"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Geriatric Depression Scale (GDS)",
+    "content": "The GDS is a screening tool for identifying depression in elderly adults. It has been extensively tested and used with older populations.\n\nA short form GDS consists of 15 questions with yes/no answers related to the past week. Questions were selected based on their high correlation with depressive symptoms.\n\nScoring:\n*   0-4: Normal\n*   5-8: Mild Depression\n*   9-11: Moderate Depression\n*   12-15: Severe Depression\n\nThe short form is suitable for physically ill or mildly demented patients with short attention spans.  It takes about 5-7 minutes to complete."
+  },
+  {
+    "layout": "section_header",
+    "title": "Assessing Burnout",
+    "sub_heading": "Using the Maslach Burnout Inventory (MBI)"
+  },
+  {
+    "layout": "title_and_content",
+    "title": "Maslach Burnout Inventory (MBI)",
+    "content": "The MBI is a screening tool used to identify symptoms of burnout in elderly adults. The MBI has been tested and used extensively with the older population.\n\nThe MBI consists of 22 items divided into 3 sub-scales:\n\n1.  Emotional Exhaustion (EE): 9 items, assessing feelings of depletion, exhaustion, and fatigue.\n2.  Depersonalization (DP): 5 items, assessing feelings of detachment, cynicism, and reduced empathy.\n3.  Personal Accomplishment (PA): 8 items, assessing feelings of competence, effectiveness, and accomplishment.\n\nScores are calculated for each subscale by summing the ratings for each item. Higher scores indicate higher levels of burnout.\n\nBurnout Levels:\n*   Low: Scores below the 25th percentile.\n*   Moderate: Scores between the 25th and 75th percentiles.\n*   High: Scores above the 75th percentile."
+  },
+  {
+    "layout": "image_with_caption",
+    "image_path": "pdf_images\\page_32.png",
+    "title": "MBI Chart Visualization",
+    "content": "Visualization of the MBI scores and burnout levels."
+  },
+  {
+    "layout": "image_with_caption",
+    "image_path": "pdf_images\\page_33.png",
+    "title": "Depression and Burnout comparison",
+    "content": "Visualization of the GDS and MBI Scores."
+  }
+]

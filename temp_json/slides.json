@@ -1,0 +1,461 @@
+[
+  {
+    "layout": "Title Slide",
+    "title": "SlidesGen: Automatic Generation of Presentation Slides for a Technical Paper Using Summarization",
+    "content": [
+      "Conference Paper · January 2009",
+      "Source: DBLP",
+      "CITATIONS 37",
+      "READS 2,802",
+      "3 authors, including:",
+      "Ravindranath Chowdary",
+      "Indian Institute of Technology BHU",
+      "63 PUBLICATIONS 905 CITATIONS"
+    ],
+    "image_path": "pdf_images\\page_1.png"
+  },
+  {
+    "layout": "Title and Content",
+    "title": "SlidesGen: Automatic Generation of Presentation Slides for a Technical Paper Using Summarization",
+    "content": [
+      "M. Sravanthi, C. Ravindranath Chowdary and P. Sreenivasa Kumar",
+      "Department of Computer Science and Engineering",
+      "Indian Institute of Technology Madras",
+      "Chennai, India 600 036.",
+      "{sravanti,chowdary and psk}@cse.iitm.ac.in"
+    ],
+    "image_path": "pdf_images\\page_2.png"
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Abstract",
+    "content": [
+      "Presentations are one of the most common and effective ways of communicating the overview of a work to the audience.",
+      "Given a technical paper, automatic generation of presentation slides reduces the effort of the presenter and helps in creating a structured summary of the paper.",
+      "Propose the framework of a novel system.",
+      "Any paper that has an abstract and whose sections can be categorized under introduction, related work, model, experiments and conclusions can be given as input.",
+      "Documents in LATEX are rich in structural and semantic information.",
+      "Converted to XML format.",
+      "A query speciﬁc extractive summarizer has been used to generate slides.",
+      "All graphical elements from the paper are made well use of by placing them at appropriate locations in the slides."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Introduction",
+    "content": [
+      "Slides have been an effective and popular means of presentation of information.",
+      "With the availability of many software tools usage has increased tremendously.",
+      "These tools help only in the formatting of content, but not in preparing the content itself.",
+      "Tool that generates slides for the presentation with important points and all necessary ﬁgures, tables and graphs from a technical paper.",
+      "Such kind of a tool saves time and reduces the effort by providing a basic presentation.",
+      "Slides contain the summarized version of a technical report.",
+      "Automatic generation of presentation slides is a nontrivial task.",
+      "Segmentation of document into multiple topics, summarizing content of each topic and aligning these topics to one or more slides and placing necessary graphical content like ﬁgures, graphs and tables in appropriate slides at appropriate locations."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Introduction (cont.)",
+    "content": [
+      "Generating slides for research papers that are in accordance with standards of conference/journal proceedings.",
+      "Conference papers have an almost similar structure.",
+      "Abstract and sections can be broadly classiﬁed into presenting the introduction, the related work, actual work (model), the experiments, the conclusions and the bibliography.",
+      "Presenter preserves the order of the paper in slides and each section is allotted one or more slides.",
+      "Observing the similarity present between conference paper and human written slides for the paper, we address the problem of automatic generation of presentation slides by exploiting the structure of a conference paper."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Related Work",
+    "content": [
+      "Very few papers directly address this problem of automatic slide generation.",
+      "Masao et al.(Masao & Koiti 1999) tried to automatically generate a presentation from semantically annotated documents.",
+      "The input documents are normal text documents which are semi-automatically annotated with GDA tagset to infer semantic relations between sentences.",
+      "Initially topics of the document are identiﬁed and ranked.",
+      "Highly ranked topics are taken as slide headings. Relevant sentences to the topics are extracted from documents and are processed to prepare bullet points."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Related Work (cont.)",
+    "content": [
+      "Shibata et al. in (Shibata & Kurohashi 2005) prepares slides from raw text.",
+      "Clauses and sentences are treated as discourse units and several relations like contrast, list, additive, topic-chaining, elaboration, cause, example etc., are identiﬁed between them.",
+      "Some clauses are identiﬁed as topic parts and others are treated as non-topic parts.",
+      "These extracted topic and non-topic parts are placed on the slides based on the discourse structure detected.",
+      "In (Yoshiaki, Masashi, & Katsumi 2003; Miyamoto, Sakai, & Masuyama 2006), the authors tried to analyze LATEX structure of technical document to generate a set of slides."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Related Work (cont.)",
+    "content": [
+      "Masum et al.(Masum, Ishizuka, & Islam 2005; Masum & Ishizuka 2006) proposed a system called Auto Report to Presentation (ARP) which prepares a text report with text relevant to the users search query ﬁrst and then a presentation from the report.",
+      "The query is disambiguated using Wikipedia and a report for each sense of the query is prepared.",
+      "A presentation is built form this report by taking a maximum of 5 lines from each head-text tuple and slides for them are prepared.",
+      "These 5 lines are randomly picked as two lines from the top, one in the middle and two from the end of text-chunk."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Related Work (cont.)",
+    "content": [
+      "Approaches are not language independent as they require language speciﬁc parsers to identify the speciﬁed relations.",
+      "The technical documents are different from normal articles which are used as input.",
+      "Sentences are selected randomly for presentation from the report, which may result in a incoherent text.",
+      "In contrast to above approaches, in this work we make use of the structure given by the author in the LATEX document and proceed in a language and domain independent manner.",
+      "Employ a query speciﬁc text summarization system that generates a coherent set of points by summarizing the text content under a section/sub-section."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "System Overview",
+    "content": [
+      "Our system framework is as shown in Figure 1. Details of each component are discussed in the following sections."
+    ],
+    "image_path": "pdf_images\\page_3.png"
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Pre-processing",
+    "content": [
+      "Any technical document is normally divided into sections, sub-sections, paragraphs etc. For a better structural summary we need to preserve as much structural information as possible from the input document.",
+      "There are many markup languages like HTML, XML, etc., which can encode the structural information of the document. LATEX is one such document markup language.",
+      "Documents written in LATEX format as input. These documents are converted to XML using a publicly available LATEX to XML converter called LaTeXML.",
+      "Appropriate converters can be used to convert and extract the required information from any document present in other formats like PDF, doc etc. This XML ﬁle is used for further processing."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Conﬁguration File Generation",
+    "content": [
+      "Technical paper contains sections that can be broadly classiﬁed into introduction, related work, actual model, experiments and conclusions.",
+      "Each section has different point of view and different information content and writing style.",
+      "Initially as a ﬁrst step, the sections are categorized and then key phrases are extracted for some sections of the paper.",
+      "These details are saved in a ﬁle called “Conﬁguration File”."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Conﬁguration File Generation (cont.)",
+    "content": [
+      "If a section is one of the initial sections and title contains words like “Introduction”, “Motivation”, “Background”, “Problem Statement” etc., it is placed under “Introduction” category.",
+      "A section containing considerably large number of <cite> </cite> tags or it’s title contains words like “Related Work”, “Literature Survey” etc. are categorized under “Related Work” category.",
+      "The sections that present the actual idea of the authors which solves the problem at hand falls under model category.",
+      "Sections not placed under any of the remaining categories are placed under “Model” category.",
+      "If a section name contains words like “Experiments”, “Evaluations” etc., they fall under “Experiments” category.",
+      "If a section has a title containing words like “Conclusions”."
+    ]
+  },
+  {
+    "layout": "Title Slide",
+    "title": "Configuration File DTD and Key Phrase Extraction",
+    "content": []
+  },
+  {
+    "layout": "Section Header",
+    "title": "Extracting Key Phrases"
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Key Phrases",
+    "content": [
+      "Help in categorizing paper content.",
+      "Contain important concepts.",
+      "Mostly related to model and experimental sections."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Configuration File",
+    "content": [
+      "Keywords at the beginning are added to the model and experimental categories.",
+      "Titles in sections under model and experiments are added as key phrases.",
+      "For conclusions, title of the paper and phrases like “concludes”, “present”, etc. are used."
+    ]
+  },
+  {
+    "layout": "Section Header",
+    "title": "QueSTS Summarizer"
+  },
+  {
+    "layout": "Title and Content",
+    "title": "QueSTS Overview",
+    "content": [
+      "Represents input text as an integrated graph (IG).",
+      "Sentence is a node; edge if sentences are similar.",
+      "Edge weight is cosine similarity."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Node Weight Calculation",
+    "content": [
+      "Centrality based query specific node weight is calculated.",
+      "Equation: wq(s) = d * sim(s, q) / Σ(m∈N) sim(m, q) + (1 −d) * Σ(v∈adj(s)) sim(s, v) / Σ(u∈adj(v)) sim(u, v)wq(v)",
+      "High weight indicates a highly relevant sentence with relevant neighbours."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Contextual Tree (CTree)",
+    "content": [
+      "Neighbourhood of root node is explored in BFS order.",
+      "Nodes with higher h value (h = αw(eij) + βwq(j)) are selected.",
+      "Exploration continues until anchor node or maximum depth d is reached."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Summary Graph (SGraph)",
+    "content": [
+      "CTrees are merged (unioned) to form SGraph.",
+      "Nodes and edges present in all CTrees are present in the SGraph.",
+      "SGraphs are ranked using a scoring model; highest rank is returned as summary."
+    ]
+  },
+  {
+    "layout": "Picture with Caption",
+    "title": "CTrees and SGraphs",
+    "content": [
+      "Generation of CTrees and SGraphs from node h",
+      "Q={q1,q2}"
+    ],
+    "image_path": "pdf_images\\page_4.png"
+  },
+  {
+    "layout": "Section Header",
+    "title": "Slides Generation"
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Generating Introduction Slides",
+    "content": [
+      "Compare each sentence with the complete abstract.",
+      "Sentences with high similarity are placed on the slides.",
+      "Top m sentences are extracted for each sub-section."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Generating Related Work Slides",
+    "content": [
+      "Sentences containing cite tags are retrieved.",
+      "Similarity of these sentences with the introduction is calculated.",
+      "Highly similar sentences are placed in slides."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Generating Model and Experiment Slides",
+    "content": [
+      "Key phrases are used to identify and extract important sentences.",
+      "QueSTS summarizer is used for this purpose.",
+      "Sentences of summaries are combined and placed in slides."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Generating Conclusion Slides",
+    "content": [
+      "Keywords like “contribution”, “proposed”, etc. along with the title are used as queries.",
+      "The text under this section is summarized.",
+      "Slides are prepared as per Algorithm 1."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Rendering Graphics",
+    "content": [
+      "Graphical elements like definitions, theorems, tables, equations, figures are extracted.",
+      "Sentences referring to graphical elements are extracted.",
+      "Sentences before in-line graphical elements are extracted."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Aligning Sentences and Creating Slides",
+    "content": [
+      "At least one dedicated slide for each section/sub-section.",
+      "Slides assigned same title as section/sub-section title.",
+      "Graphical elements are displayed next to referring sentences."
+    ]
+  },
+  {
+    "layout": "Title and Table",
+    "title": "Evaluation Results of Presentation",
+    "content": [],
+    "table_data": {
+      "headers": [
+        "User",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5"
+      ],
+      "rows": [
+        [
+          "U1",
+          "10",
+          "10",
+          "9",
+          "20%",
+          "9"
+        ],
+        [
+          "U2",
+          "9",
+          "10",
+          "9",
+          "40%",
+          "8"
+        ],
+        [
+          "U3",
+          "10",
+          "9",
+          "8",
+          "20%",
+          "8"
+        ],
+        [
+          "U4",
+          "10",
+          "10",
+          "8",
+          "20%",
+          "8.5"
+        ],
+        [
+          "U5",
+          "8",
+          "8",
+          "8",
+          "40%",
+          "8"
+        ],
+        [
+          "U6",
+          "8",
+          "8",
+          "9",
+          "40%",
+          "8"
+        ],
+        [
+          "U7",
+          "10",
+          "9",
+          "9",
+          "20%",
+          "8.5"
+        ],
+        [
+          "U8",
+          "9",
+          "8",
+          "8",
+          "40%",
+          "8"
+        ],
+        [
+          "Average",
+          "9.25",
+          "9",
+          "8.5",
+          "30%",
+          "8.25"
+        ]
+      ]
+    }
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Discussion",
+    "content": [
+      "Authors agreed the system generated a good starting presentation.",
+      "Coherence and coverage of presentations were good.",
+      "Majority of changes required were to compress the sentences."
+    ]
+  },
+  {
+    "layout": "Picture with Caption",
+    "title": "Graphical Elements",
+    "content": [],
+    "image_path": "pdf_images\\page_5.png"
+  },
+  {
+    "layout": "Picture with Caption",
+    "title": "Page 6 Image",
+    "content": [],
+    "image_path": "pdf_images\\page_6.png"
+  },
+  {
+    "layout": "Title and Content",
+    "title": "Conclusions",
+    "content": [
+      "Proposed a system that can generate a good quality presentation from a technical paper in LATEX format.",
+      "Slides provide a good starting point for final presentation preparation.",
+      "Good use of LATEX document markup language and generate slides using only statistical processing.",
+      "Future work includes using natural language processing techniques to compress extracted sentences and identify appropriate indentation structure for appealing presentation."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "References",
+    "content": [
+      "Masao, U., and Koiti, H. 1999. Automatic slide presentation from semantically annotated documents.",
+      "Masum, S. M. A., and Ishizuka, M. 2006. Making topic-specific report and multimodal presentation automatically by mining the web resources.",
+      "Masum, S. M. A.; Ishizuka, M.; and Islam, M. T. 2005. Auto-presentation: A multi-agent system for building automatic multi-modal presentation of a topic from world wide web information.",
+      "Miyamoto, M.; Sakai, H.; and Masuyama, S. 2006. Research on automatic generation of presentation slides from a latex manuscript of a paper (in Japanese).",
+      "Otterbacher, J.; Erkan, G.; and Radev, D. R. 2005. Using random walks for question-focused sentence retrieval.",
+      "Shibata, T., and Kurohashi, S. 2005. Automatic slide generation based on discourse structure analysis.",
+      "Sravanthi, M.; Chowdary, C. R.; and Kumar, P. S. 2008. QueSTS: A query specific text summarization approach.",
+      "Yoshiaki, Y.; Masashi, T.; and Katsumi, N. 2003. A support system for making presentation slides (in Japanese)."
+    ]
+  },
+  {
+    "layout": "Title and Table",
+    "title": "Sample Slides - QueSTS Summarizer",
+    "content": [
+      "Table 2: Slides for Section",
+      "In this section we present a brief overview of our query specific summarizer that has been used to summarize model, experiment and conclusion sections.",
+      "In QueSTS we represent the input text in the form of an integrated graph (IG) where a sentence is made as a node, and an edge exists between two nodes if the sentences in them are similar.",
+      "An edge weight is calculated as cosine similarity between connecting sentences.",
+      "Also edges between adjacent sentences in the document are retained irrespective of their edge weight."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "QueSTS Summarizer",
+    "content": [
+      "When a key phrase is given as a query to the system, a centrality based query specific node weight is calculated for each node as per the following equation.",
+      "Equation for NWeight deleted for space constraints",
+      "where wqs is node weight of node s with respect to query term q, d is bias factor, N is the total number of nodes and simsisj is cosine similarity between sentences si and sj.",
+      "Thus we have query independent edge weights and query specific node weights.",
+      "Hence we make use of the edge weights to preserve coherence and the node weights to preserve query relevant information."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "QueSTS Summarizer",
+    "content": [
+      "These SGraphs, generated one from each node in the integrated graph are ranked using a scoring model and the one with the highest rank is returned as summary.",
+      "A SGraph with high node and edge weights gets high rank as per the scoring model.",
+      "For example, if we have an integrated graph as shown in Figure , for finding relevant nodes for query term q1, the neighbourhood of node h and then nodes g, d are explored.",
+      "Exploration is stopped on reaching nodes b and f which contain q1."
+    ]
+  },
+  {
+    "layout": "Title and Content",
+    "title": "QueSTS Summarizer",
+    "content": [
+      "Similarly for the query term q2, CTree is generated.",
+      "As the SGraph is a connected component, we will have inter connected set of sentences in the summary and hence coherence is preserved.",
+      "QueSTS summarizer is discussed in more detail in []."
+    ],
+    "image_path": "pdf_images\\page_7.png"
+  }
+]
