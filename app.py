@@ -4,9 +4,12 @@ import google.generativeai as genai
 from pdfminer.high_level import extract_text
 import re
 import json
+from dotenv import load_dotenv
+
+load_dotenv()  # This loads the variables from the .env file
 
 # STEP 1: Setup Gemini Flash
-GOOGLE_API_KEY = "AIzaSyAkAm--EIB-5jgoFJecpZ9iQslbXFRllUQ"
+GOOGLE_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel("gemini-2.0-flash")
 
@@ -275,5 +278,5 @@ def convert_pdf_to_slide_json(pdf_path, output_json_path="slides.json"):
     print("✅ Done.")
 
 # === USAGE ===
-pdf_path = "pdf1.pdf"
+pdf_path = "uploads\pdf1.pdf"
 convert_pdf_to_slide_json(pdf_path)
