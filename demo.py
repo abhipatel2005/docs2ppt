@@ -2,8 +2,9 @@ import json
 import argparse
 from pptx import Presentation
 from pptx.util import Inches, Pt
-from pptx.enum.text import PP_ALIGN
+from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.dml.color import RGBColor
+from pptx.enum.shapes import MSO_SHAPE_TYPE
 
 #! styling the background, just to make it look more fasinating
 from pptx.dml.color import RGBColor
@@ -22,13 +23,14 @@ def add_layout_styled_background(prs, slide, layout_type):
         slide.shapes._spTree.insert(2, bg._element)
 
     def add_center_card(color, opacity=200):
-        card_width = int(slide_width * 0.85)
-        card_height = int(slide_height * 0.6)
+        card_width = int(slide_width)
+        card_height = int(slide_height * 0.75)
         card_left = int((slide_width - card_width) / 2)
-        card_top = int((slide_height - card_height) / 2)
+        card_top = int((slide_height - card_height) / 1)
 
         card = slide.shapes.add_shape(
-            MSO_SHAPE.ROUNDED_RECTANGLE, card_left, card_top, card_width, card_height
+            # MSO_SHAPE.ROUNDED_RECTANGLE, card_left, card_top, card_width, card_height
+            MSO_SHAPE.RECTANGLE, card_left, card_top, card_width, card_height
         )
         card.fill.solid()
         card.fill.fore_color.rgb = RGBColor(*color)
@@ -96,25 +98,8 @@ def add_layout_styled_background(prs, slide, layout_type):
         add_side_cards((234, 239, 242), (234, 239, 242), opacity=180)
 
     elif layout_type in ["content_with_caption", "image_with_caption"]:
-    # Soft gradient-style background
         add_background_fill((234, 239, 242))
 
-        # Optional decorative card for image area (bottom-right)
-        img_card = slide.shapes.add_shape(
-            MSO_SHAPE.ROUNDED_RECTANGLE,
-            int(slide_width * 0.55),
-            int(slide_height * 0.6),
-            int(slide_width * 0.35),
-            int(slide_height * 0.28)
-        )
-        img_card.fill.solid()
-        img_card.fill.fore_color.rgb = RGBColor(39, 68, 114)
-        img_card.fill.fore_color.alpha = 210  # slight transparency
-        img_card.line.fill.background()
-        slide.shapes._spTree.remove(img_card._element)
-        slide.shapes._spTree.insert(3, img_card._element)
-
-        # Optional thin colored bar on left
         bar = slide.shapes.add_shape(
             MSO_SHAPE.RECTANGLE,
             0,
@@ -128,11 +113,23 @@ def add_layout_styled_background(prs, slide, layout_type):
         slide.shapes._spTree.remove(bar._element)
         slide.shapes._spTree.insert(3, bar._element)
 
-    elif layout_type in ["table", "chart", "other_multi_media"]:
-        add_background_fill((234, 239, 242))
+        # 🔧 Move and resize text box
+        for shape in slide.shapes:
+            if not shape.has_text_frame:
+                continue
+            if shape.text_frame.text.strip() != "":
+                shape.left = int(slide_width * 0.06)
+                shape.top = int(slide_height * 0.2)
+                shape.width = int(slide_width * 0.5)
+                shape.height = int(slide_height * 0.6)
 
-    else:
-        add_background_fill((234, 239, 242))
+        # 🔧 Move and resize image box
+        for shape in slide.shapes:
+            if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
+                shape.left = int(slide_width * 0.6)
+                shape.top = int(slide_height * 0.25)
+                shape.width = int(slide_width * 0.35)
+                shape.height = int(slide_height * 0.5)
 
 
 # Configuration constants
@@ -189,34 +186,73 @@ def add_title_slide(prs, slide_data):
     """Add a title slide with title and subtitle."""
     slide_layout = prs.slide_layouts[0]  # Title Slide
     slide = prs.slides.add_slide(slide_layout)
-    add_layout_styled_background (prs, slide, layout_type="title_slide")
+    add_layout_styled_background(prs, slide, layout_type="title_slide")
     
     title = slide.shapes.title
     subtitle = slide.placeholders[1]
     
+    # Set title text
     title.text = slide_data["title"]
+    
+    # Apply formatting to ALL paragraphs in the title text frame
+    for paragraph in title.text_frame.paragraphs:
+        paragraph.font.size = Pt(44)
+        paragraph.font.bold = True
     
     # Check which key exists in the slide_data
     sub_heading_key = "sub-heading" if "sub-heading" in slide_data else "sub_heading"
     subtitle.text = slide_data.get(sub_heading_key, "")
     
-    # Format title
-    title_format = title.text_frame.paragraphs[0].font
-    title_format.size = Pt(44)
-    title_format.bold = True
-    
-    # Format subtitle
-    subtitle_format = subtitle.text_frame.paragraphs[0].font
-    subtitle_format.size = Pt(24)
-    subtitle_format.italic = True
+    # Apply formatting to ALL paragraphs in the subtitle text frame
+    for paragraph in subtitle.text_frame.paragraphs:
+        paragraph.font.size = Pt(24)
+        paragraph.font.italic = True
     
     return slide
 
+# def add_title_and_content_slide(prs, slide_data, is_continuation=False):
+#     """Add a slide with title and content with overflow handling."""
+#     slide_layout = prs.slide_layouts[1]  # Title and Content
+#     slide = prs.slides.add_slide(slide_layout)
+#     add_layout_styled_background (prs, slide, layout_type="title_and_content")
+    
+#     title = slide.shapes.title
+#     content = slide.placeholders[1]
+    
+#     # Adjust title for continuation slides
+#     if is_continuation:
+#         title.text = f"{slide_data['title']} (cont.)"
+#     else:
+#         title.text = slide_data["title"]
+    
+#     # Format title
+#     title_format = title.text_frame.paragraphs[0].font
+#     title_format.size = Pt(36)
+#     title_format.bold = True
+    
+#     # Split content by newlines for overflow detection
+#     content_paragraphs = slide_data["content"].split('\n')
+    
+#     # Check for overflow
+#     first_part, overflow = check_content_overflow(content_paragraphs)
+    
+#     # Add first part content
+#     first_content = '\n'.join(first_part)
+#     set_bullet_points(content.text_frame, first_content, 80, 20)
+    
+#     # Handle overflow if present
+#     if overflow:
+#         # Create continuation slide with remaining content
+#         continuation_data = slide_data.copy()
+#         continuation_data["content"] = '\n'.join(overflow)
+#         add_title_and_content_slide(prs, continuation_data, True)
+    
+#     return slide
 def add_title_and_content_slide(prs, slide_data, is_continuation=False):
-    """Add a slide with title and content with overflow handling."""
+    """Add a slide with title and content with precise vertical overflow handling."""
     slide_layout = prs.slide_layouts[1]  # Title and Content
     slide = prs.slides.add_slide(slide_layout)
-    add_layout_styled_background (prs, slide, layout_type="title_and_content")
+    add_layout_styled_background(prs, slide, layout_type="title_and_content")
     
     title = slide.shapes.title
     content = slide.placeholders[1]
@@ -227,23 +263,82 @@ def add_title_and_content_slide(prs, slide_data, is_continuation=False):
     else:
         title.text = slide_data["title"]
     
-    # Format title
-    title_format = title.text_frame.paragraphs[0].font
-    title_format.size = Pt(36)
-    title_format.bold = True
+    # Format all paragraphs in the title text frame
+    for paragraph in title.text_frame.paragraphs:
+        paragraph.font.size = Pt(36)
+        paragraph.font.bold = True
+
+    # Calculate the available height in the content placeholder
+    available_height = content.height
     
-    # Split content by newlines for overflow detection
+    # Split content by newlines
     content_paragraphs = slide_data["content"].split('\n')
     
-    # Check for overflow
-    first_part, overflow = check_content_overflow(content_paragraphs)
+    # Create a testing function to determine exactly how many paragraphs will fit
+    def test_content_fit(paragraphs, font_size=20):
+        # Create a temporary slide for testing
+        temp_slide = prs.slides.add_slide(prs.slide_layouts[1])
+        temp_content = temp_slide.placeholders[1]
+        
+        # Set the content
+        test_content = '\n'.join(paragraphs)
+        set_bullet_points(temp_content.text_frame, test_content, 80, font_size)
+        
+        # Check if content fits within available height
+        text_height = 0
+        for p in temp_content.text_frame.paragraphs:
+            # Get line spacing safely, default to 1.0 if None
+            line_spacing = 1.0  # Default spacing
+            if hasattr(p, 'line_spacing') and p.line_spacing is not None:
+                line_spacing = p.line_spacing
+                
+            # Convert font size to Pt if it's not already
+            font_size_pt = font_size
+            if not isinstance(font_size_pt, Pt):
+                font_size_pt = Pt(font_size)
+                
+            # Calculate paragraph height safely
+            para_height = font_size_pt.pt * line_spacing * 1.2  # Use .pt attribute to get the numeric value
+            text_height += para_height
+        
+        # Remove the temporary slide
+        prs.slides._sldIdLst.remove(temp_slide._element.sldId)
+        
+        return text_height <= available_height
+    
+    # Use a simpler approach to avoid errors with temporary slides
+    # For most presentations, using a fixed number based on paragraph length works well
+    
+    # Calculate average paragraph length
+    avg_chars = sum(len(p) for p in content_paragraphs) / max(1, len(content_paragraphs))
+    
+    # Determine paragraphs per slide based on length
+    if avg_chars > 200:  # Very long paragraphs
+        max_paragraphs = 3
+    elif avg_chars > 100:  # Medium paragraphs
+        max_paragraphs = 4
+    elif avg_chars > 50:  # Short paragraphs
+        max_paragraphs = 6
+    else:  # Very short paragraphs
+        max_paragraphs = 8
+        
+    # Be more conservative for continuation slides
+    if is_continuation:
+        max_paragraphs = max(1, max_paragraphs - 1)
+        
+    # Calculate how many paragraphs to use on this slide
+    paragraphs_to_use = min(max_paragraphs, len(content_paragraphs))
+    
+    # Split content
+    first_part = content_paragraphs[:paragraphs_to_use]
+    overflow = content_paragraphs[paragraphs_to_use:] if paragraphs_to_use < len(content_paragraphs) else None
     
     # Add first part content
     first_content = '\n'.join(first_part)
     set_bullet_points(content.text_frame, first_content, 80, 20)
     
     # Handle overflow if present
-    if overflow:
+    if overflow and len(overflow) > 0:
         # Create continuation slide with remaining content
         continuation_data = slide_data.copy()
         continuation_data["content"] = '\n'.join(overflow)
@@ -459,153 +554,345 @@ def add_comparison_slide(prs, slide_data, is_continuation=False):
     
     return slide
 
+# def add_content_with_caption_slide(prs, slide_data, is_continuation=False):
+#     """Add a slide with bullet point content, image, and caption — with overflow handling."""
+#     slide_layout = prs.slide_layouts[1]  # Title and Content
+#     slide = prs.slides.add_slide(slide_layout)
+#     add_layout_styled_background(prs, slide, layout_type="content_with_caption")
+
+#     title_shape = slide.shapes.title
+#     content_shape = slide.placeholders[1]
+    
+#     content_data = slide_data.get("content", {})
+#     if isinstance(content_data, str):
+#         content_data = {"title": slide_data.get("title", ""), "content": content_data}
+
+#     # Set title text (adjusted for continuation)
+#     main_title = content_data.get("title", slide_data.get("title", ""))
+#     title_shape.text = f"{main_title} (cont.)" if is_continuation else main_title
+#     title_shape.text_frame.paragraphs[0].font.size = Pt(36)
+#     title_shape.text_frame.paragraphs[0].font.bold = True
+
+#     # Prepare content and handle overflow
+#     content_text = content_data.get("content", "")
+#     paragraphs = content_text.split('\n')
+#     first_part, overflow = check_content_overflow(paragraphs)
+
+#     # Add bullet points
+#     # set_bullet_points(content_shape.text_frame, '\n'.join(first_part), font_size=Pt(20), left_indent=Inches(0.5))
+#     set_bullet_points(content_shape.text_frame, '\n'.join(first_part), font_size=(20))
+
+
+#     if not is_continuation:
+#         # Image handling
+#         image_path = slide_data.get("multi_media", slide_data.get("image_path", None))
+#         left = Inches(5.8)
+#         top = Inches(2)
+#         width = Inches(3)
+#         height = Inches(2.5)
+
+#         if image_path:
+#             try:
+#                 slide.shapes.add_picture(image_path, left, top, width, height)
+#             except Exception:
+#                 # Add image path as placeholder text if invalid
+#                 placeholder_box = slide.shapes.add_textbox(left, top, width, height)
+#                 placeholder_frame = placeholder_box.text_frame
+#                 placeholder_frame.text = f"[Image: {image_path}]"
+#                 placeholder_frame.paragraphs[0].alignment = PP_ALIGN.CENTER
+#                 placeholder_frame.paragraphs[0].font.italic = True
+#                 placeholder_frame.paragraphs[0].font.size = Pt(14)
+
+#         # Caption (if available)
+#         caption = content_data.get("caption", "")
+#         if caption:
+#             caption_top = top + height + Inches(0.2)
+#             caption_box = slide.shapes.add_textbox(left, caption_top, width, Inches(0.5))
+#             caption_frame = caption_box.text_frame
+#             caption_frame.text = caption
+#             caption_frame.paragraphs[0].alignment = PP_ALIGN.CENTER
+#             caption_frame.paragraphs[0].font.italic = True
+#             caption_frame.paragraphs[0].font.size = Pt(14)
+
+#     # Recursive call for overflow
+#     if overflow:
+#         continuation_data = slide_data.copy()
+#         if isinstance(continuation_data.get("content", {}), dict):
+#             continuation_data["content"] = continuation_data["content"].copy()
+#             continuation_data["content"]["content"] = '\n'.join(overflow)
+#         else:
+#             continuation_data["content"] = {'title': main_title, 'content': '\n'.join(overflow)}
+#         add_content_with_caption_slide(prs, continuation_data, is_continuation=True)
+
+#     return slide
+
 def add_content_with_caption_slide(prs, slide_data, is_continuation=False):
-    """Add a slide with content and a caption with overflow handling."""
+    """Add a slide with bullet point content and optional icon/3D image."""
     slide_layout = prs.slide_layouts[1]  # Title and Content
     slide = prs.slides.add_slide(slide_layout)
-    add_layout_styled_background (prs, slide, layout_type="content_with_caption")
-    
-    title = slide.shapes.title
+    add_layout_styled_background(prs, slide, layout_type="content_with_caption")
+
+    title_shape = slide.shapes.title
     content_shape = slide.placeholders[1]
     
     content_data = slide_data.get("content", {})
-    
-    # If content is a string instead of a dictionary, create a simple dict
     if isinstance(content_data, str):
         content_data = {"title": slide_data.get("title", ""), "content": content_data}
+
+    # Set title with appropriate continuation marker
+    main_title = content_data.get("title", slide_data.get("title", ""))
+    title_shape.text = f"{main_title} (cont.)" if is_continuation else main_title
     
-    # Adjust title for continuation slides
-    if is_continuation:
-        title.text = f"{content_data.get('title', slide_data.get('title', ''))} (cont.)"
-    else:
-        title.text = content_data.get('title', slide_data.get('title', ''))
+    # Apply consistent formatting to all title paragraphs
+    for paragraph in title_shape.text_frame.paragraphs:
+        paragraph.font.size = Pt(36)
+        paragraph.font.bold = True
     
-    # Split content by newlines for overflow detection
+    # Process content with line breaks at 45 characters
     content_text = content_data.get("content", "")
-    content_paragraphs = content_text.split('\n')
-    
-    # Check for overflow
-    first_part, overflow = check_content_overflow(content_paragraphs)
-    
-    # Add first part content
-    first_content = '\n'.join(first_part)
-    set_bullet_points(content_shape.text_frame, first_content, 45, 20)
-    
-    # Handle image placement (only on the first slide)
-    if not is_continuation:
-        # Look for image path in multiple possible locations
-        image_path = slide_data.get("multi_media", slide_data.get("image_path", None))
+    formatted_content = []
+    for line in content_text.split('\n'):
+        words = line.split()
+        current_line = []
+        current_length = 0
         
-        if image_path:
-            # Define image position and size
-            left = Inches(1)
-            top = Inches(2.5)
-            width = Inches(4)
-            height = Inches(3)
-            
-            try:
-                # Attempt to add the actual image (if path is valid)
-                slide.shapes.add_picture(image_path, left, top, width, height)
-            except Exception:
-                # If image path is invalid, add a placeholder
-                txBox = slide.shapes.add_textbox(left, top, width, height)
-                tf = txBox.text_frame
-                tf.text = f"Image: {image_path}"
-            
-            # Add image caption if provided
-            caption = content_data.get("caption", "")
-            if caption:
-                caption_top = top + height + Inches(0.25)
-                caption_box = slide.shapes.add_textbox(left, caption_top, width, Inches(0.5))
-                caption_frame = caption_box.text_frame
-                caption_frame.text = caption
-                caption_frame.paragraphs[0].alignment = PP_ALIGN.CENTER
-                caption_frame.paragraphs[0].font.italic = True
-                caption_frame.paragraphs[0].font.size = Pt(14)
+        for word in words:
+            if current_length + len(word) + (1 if current_length > 0 else 0) <= 45:
+                current_line.append(word)
+                current_length += len(word) + (1 if current_length > 0 else 0)
+            else:
+                formatted_content.append(" ".join(current_line))
+                current_line = [word]
+                current_length = len(word)
+        
+        if current_line:
+            formatted_content.append(" ".join(current_line))
     
-    # Format title
-    title_format = title.text_frame.paragraphs[0].font
-    title_format.size = Pt(36)
-    title_format.bold = True
+    # Check for overflow using MAX_BULLET_POINTS_PER_SLIDE
+    first_part, overflow = check_content_overflow(formatted_content)
     
-    # Handle overflow if present
+    # Add bullet points using the referenced function
+    set_bullet_points(content_shape.text_frame, '\n'.join(first_part), max_line_length=45, font_size=20)
+
+    if not is_continuation:
+        # 3D icon or chart handling
+        chart_data = slide_data.get("chart/smart3D_icon")
+        if chart_data:
+            left = Inches(5.8)
+            top = Inches(2)
+            width = Inches(3)
+            height = Inches(2.5)
+            
+            # Add placeholder or actual chart/3D based on implementation
+            icon_box = slide.shapes.add_textbox(left, top, width, height)
+            icon_frame = icon_box.text_frame
+            icon_frame.text = f"[3D Icon/Chart]"
+            para = icon_frame.paragraphs[0]
+            para.alignment = PP_ALIGN.CENTER
+            para.font.size = Pt(14)
+
+    # Recursive call for overflow
     if overflow:
-        # Create continuation slide with remaining content
         continuation_data = slide_data.copy()
         if isinstance(continuation_data.get("content", {}), dict):
             continuation_data["content"] = continuation_data["content"].copy()
             continuation_data["content"]["content"] = '\n'.join(overflow)
         else:
-            continuation_data["content"] = {'title': slide_data.get('title', ''), 'content': '\n'.join(overflow)}
-        add_content_with_caption_slide(prs, continuation_data, True)
-    
+            continuation_data["content"] = {'title': main_title, 'content': '\n'.join(overflow)}
+        add_content_with_caption_slide(prs, continuation_data, is_continuation=True)
+
     return slide
 
-def add_table_slide(prs, slide_data):
-    """Add a slide with a table."""
-    slide_layout = prs.slide_layouts[5]  # Blank
+def add_image_with_caption_slide(prs, slide_data):
+    """Add a slide with an image and caption."""
+    slide_layout = prs.slide_layouts[6]  # Blank layout
     slide = prs.slides.add_slide(slide_layout)
-    add_layout_styled_background (prs, slide, layout_type="title_with_table")
+    add_layout_styled_background(prs, slide, layout_type="image_with_caption")
+
+    # Add title with max 60 characters, line breaks at 30 chars
+    title_text = slide_data.get("title", "")
     
-    # Add a title
-    left = Inches(1)
-    top = Inches(0.5)
-    width = Inches(8)
-    height = Inches(1)
+    # Format title with line breaks
+    formatted_title_lines = []
+    words = title_text.split()
+    current_line = []
+    current_length = 0
     
-    title_box = slide.shapes.add_textbox(left, top, width, height)
+    for word in words:
+        if current_length + len(word) + (1 if current_length > 0 else 0) <= 30:
+            current_line.append(word)
+            current_length += len(word) + (1 if current_length > 0 else 0)
+        else:
+            formatted_title_lines.append(" ".join(current_line))
+            current_line = [word]
+            current_length = len(word)
+    
+    if current_line:
+        formatted_title_lines.append(" ".join(current_line))
+    
+    formatted_title = "\n".join(formatted_title_lines)
+    
+    # Add title textbox
+    title_box = slide.shapes.add_textbox(Inches(0.5), Inches(0.5), Inches(9), Inches(1))
     title_frame = title_box.text_frame
-    title_frame.text = slide_data.get("title", "Table Slide")
-    title_frame.paragraphs[0].font.size = Pt(36)
-    title_frame.paragraphs[0].font.bold = True
+    title_frame.text = formatted_title
     
-    # Get table data
-    table_data = slide_data.get("table", {})
-    
-    # Table position
-    left = Inches(1)
-    top = Inches(2)
-    width = Inches(8)
+    # Apply consistent formatting to all title paragraphs
+    for paragraph in title_frame.paragraphs:
+        paragraph.font.size = Pt(36)
+        paragraph.font.bold = True
+        paragraph.alignment = PP_ALIGN.CENTER
+
+    # Add image
+    image_path = slide_data.get("image_path", "")
+    left = Inches(2)
+    top = Inches(1.8)
+    width = Inches(6)
     height = Inches(4)
     
     try:
-        # Try to create an actual table if we have rows and columns
-        if isinstance(table_data, dict) and "rows" in table_data and "columns" in table_data and "data" in table_data:
-            rows = table_data["rows"]
-            cols = table_data["columns"]
-            data = table_data["data"]
-            
-            # Create table
-            table = slide.shapes.add_table(rows, cols, left, top, width, height).table
-            
-            # Populate table if we have data
-            if isinstance(data, list):
-                for i, row_data in enumerate(data):
-                    if i < rows and isinstance(row_data, list):
-                        for j, cell_data in enumerate(row_data):
-                            if j < cols:
-                                cell = table.cell(i, j)
-                                cell.text = str(cell_data)
+        slide.shapes.add_picture(image_path, left, top, width, height)
+    except Exception:
+        # Add image path as placeholder text if invalid
+        placeholder_box = slide.shapes.add_textbox(left, top, width, height)
+        placeholder_frame = placeholder_box.text_frame
+        placeholder_frame.text = f"[Image: {image_path}]"
+        paragraph = placeholder_frame.paragraphs[0]
+        paragraph.alignment = PP_ALIGN.CENTER
+        paragraph.font.italic = True
+        paragraph.font.size = Pt(14)
+
+    # Add caption with max 250 characters
+    caption_text = slide_data.get("content", "")
+    if len(caption_text) > 250:
+        caption_text = caption_text[:247] + "..."
+
+    # Format caption with line breaks at 90 characters
+    formatted_caption_lines = []
+    words = caption_text.split()
+    current_line = []
+    current_length = 0
+
+    for word in words:
+        if current_length + len(word) + (1 if current_length > 0 else 0) <= 90:
+            current_line.append(word)
+            current_length += len(word) + (1 if current_length > 0 else 0)
         else:
-            # If we don't have proper table data, add a placeholder
-            table_box = slide.shapes.add_textbox(left, top, width, height)
-            table_frame = table_box.text_frame
-            
-            if isinstance(table_data, dict) and "rows" in table_data and "columns" in table_data:
-                table_info = f"Table with {table_data['rows']} rows and {table_data['columns']} columns"
-                if "data" in table_data:
-                    table_info += " (data available but improperly formatted)"
-            else:
-                table_info = "Table data would be formatted here"
-            
-            table_frame.text = table_info
-    
-    except Exception as e:
-        # If table creation fails, add a textbox with error
-        error_box = slide.shapes.add_textbox(left, top, width, height)
-        error_frame = error_box.text_frame
-        error_frame.text = f"Error creating table: {str(e)}"
-    
+            formatted_caption_lines.append(" ".join(current_line))
+            current_line = [word]
+            current_length = len(word)
+
+    if current_line:
+        formatted_caption_lines.append(" ".join(current_line))
+
+    formatted_caption = "\n".join(formatted_caption_lines)
+
+    caption_top = top + height + Inches(0.3)
+    caption_box = slide.shapes.add_textbox(Inches(1), caption_top, Inches(8), Inches(1))
+    caption_frame = caption_box.text_frame
+    caption_frame.text = formatted_caption
+
+    # Format all caption paragraphs
+    for paragraph in caption_frame.paragraphs:
+        paragraph.alignment = PP_ALIGN.CENTER
+        paragraph.font.italic = True
+        paragraph.font.size = Pt(16)
+
+    return slide
+
+def add_table_slide(prs, slide_data):
+    """Add a slide with a table using the default title and dynamic sizing."""
+    slide_layout = prs.slide_layouts[5]  # Using a blank layout
+    slide = prs.slides.add_slide(slide_layout)
+
+    # Background styling (optional)
+    add_layout_styled_background(prs, slide, layout_type="title_with_table")
+
+    # Use the title placeholder if available
+    if slide.shapes.title:
+        title_shape = slide.shapes.title
+        title_shape.text = slide_data.get("title", "Table Slide")
+        for paragraph in title_shape.text_frame.paragraphs:
+            paragraph.font.size = Pt(32)
+            paragraph.font.bold = True
+            paragraph.alignment = PP_ALIGN.LEFT
+
+    # Get table data
+    table_data = slide_data.get("table", {})
+    headers = table_data.get("headers", [])
+    rows = table_data.get("rows", [])
+
+    if not headers or not rows:
+        return slide
+
+    n_rows = len(rows) + 1
+    n_cols = len(headers)
+
+    # Set table position
+    left = Inches(0.5)
+    top = Inches(1.5)
+    max_width = Inches(9)
+    max_height = Inches(5)
+
+    # Estimate column widths based on max string length
+    max_lengths = [len(str(header)) for header in headers]
+    for row in rows:
+        for i, cell in enumerate(row):
+            max_lengths[i] = max(max_lengths[i], len(str(cell)))
+
+    total_length = sum(max_lengths)
+    col_widths = [max_width * (l / total_length) for l in max_lengths]
+
+    # Add table with approximate dimensions
+    table = slide.shapes.add_table(n_rows, n_cols, left, top, max_width, max_height).table
+
+    # Apply calculated widths
+    for i, width in enumerate(col_widths):
+        table.columns[i].width = int(width)
+
+    # Add headers
+    for col_idx, header in enumerate(headers):
+        cell = table.cell(0, col_idx)
+        cell.text = str(header)
+        for para in cell.text_frame.paragraphs:
+            para.font.bold = True
+            para.font.size = Pt(14)
+            para.alignment = PP_ALIGN.CENTER
+        cell.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+
+    # Fill rows
+    for row_idx, row_data in enumerate(rows):
+        for col_idx, cell_data in enumerate(row_data):
+            cell = table.cell(row_idx + 1, col_idx)
+            cell.text = str(cell_data)
+            for para in cell.text_frame.paragraphs:
+                para.font.size = Pt(13)
+                para.alignment = PP_ALIGN.CENTER
+            cell.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+
+    # Dynamic row heights based on number of lines
+    for i in range(n_rows):
+        row_height = Inches(0.4)
+        for j in range(n_cols):
+            lines = table.cell(i, j).text.count('\n') + 1
+            row_height = max(row_height, Inches(0.2 + 0.2 * lines))
+        table.rows[i].height = int(row_height)
+
+    # Optional caption/content below the table
+    content_text = slide_data.get("content", "")
+    if content_text:
+        content_top = top + max_height + Inches(0.3)
+        content_box = slide.shapes.add_textbox(left, content_top, max_width, Inches(2))
+        content_frame = content_box.text_frame
+        content_frame.word_wrap = True
+        content_frame.clear()  # Clear default paragraph
+
+        for line in content_text.strip().split('\n'):
+            p = content_frame.add_paragraph()
+            p.text = line
+            p.font.size = Pt(12)
+            p.alignment = PP_ALIGN.LEFT
+
     return slide
 
 def format_text(text, max_line_length):
@@ -649,9 +936,11 @@ def create_presentation_from_json(json_data):
             add_section_header_slide(prs, slide_data)
         elif layout == "comparison":
             add_comparison_slide(prs, slide_data)
-        elif layout in ["image_with_caption", "content_with_caption"]:
+        elif layout in "content_with_caption":
             add_content_with_caption_slide(prs, slide_data)
-        elif layout in ["table", "chart", "other_multi_media"]:
+        elif layout in "image_with_caption":
+            add_image_with_caption_slide(prs, slide_data)
+        elif layout in ["title_with_table", "chart", "other_multi_media"]:
             add_table_slide(prs, slide_data)
     
     return prs

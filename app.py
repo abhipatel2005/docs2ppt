@@ -2,6 +2,8 @@ import os
 import fitz  # PyMuPDF
 import google.generativeai as genai
 from pdfminer.high_level import extract_text
+import pdfplumber
+import pandas as pd
 import re
 import json
 from dotenv import load_dotenv
@@ -27,33 +29,99 @@ def safe_generate_response(prompt, retries=3, delay=5):
 
 
 # === STEP 2: Extract text & images from PDF ===
+# def extract_pdf_content(pdf_path, image_output_dir="pdf_images"):
+#     os.makedirs(image_output_dir, exist_ok=True)
+#     doc = fitz.open(pdf_path)
+#     combined_pages = []
+
+#     for page_num in range(len(doc)):
+#         page = doc[page_num]
+#         text = page.get_text().strip()
+#         image_path = None
+
+#         images = page.get_images(full=True)
+#         if images:
+#             xref = images[0][0]  # First image on page
+#             pix = fitz.Pixmap(doc, xref)
+#             if pix.n > 4:
+#                 pix = fitz.Pixmap(fitz.csRGB, pix)
+#             img_filename = f"page_{page_num+1}.png"
+#             img_full_path = os.path.join(image_output_dir, img_filename)
+#             pix.save(img_full_path)
+#             pix = None
+#             image_path = img_full_path
+
+#         combined_pages.append({
+#             "text": text,
+#             "image_path": image_path
+#         })
+#     return combined_pages
+
 def extract_pdf_content(pdf_path, image_output_dir="pdf_images"):
     os.makedirs(image_output_dir, exist_ok=True)
     doc = fitz.open(pdf_path)
     combined_pages = []
 
-    for page_num in range(len(doc)):
-        page = doc[page_num]
-        text = page.get_text().strip()
-        image_path = None
+    # Open pdfplumber for table detection
+    with pdfplumber.open(pdf_path) as plumber_pdf:
+        for page_num in range(len(doc)):
+            page = doc[page_num]
+            plumber_page = plumber_pdf.pages[page_num]
 
-        images = page.get_images(full=True)
-        if images:
-            xref = images[0][0]  # First image on page
-            pix = fitz.Pixmap(doc, xref)
-            if pix.n > 4:
-                pix = fitz.Pixmap(fitz.csRGB, pix)
-            img_filename = f"page_{page_num+1}.png"
-            img_full_path = os.path.join(image_output_dir, img_filename)
-            pix.save(img_full_path)
-            pix = None
-            image_path = img_full_path
+            blocks = page.get_text("dict")["blocks"]
+            text_blocks = []
 
-        combined_pages.append({
-            "text": text,
-            "image_path": image_path
-        })
+            for b in blocks:
+                if "lines" in b:
+                    y = b["bbox"][1]  # top Y coordinate
+                    text = "\n".join(["".join([span["text"] for span in line["spans"]]) for line in b["lines"]])
+                    if text.strip():
+                        text_blocks.append({"type": "text", "content": text.strip(), "y": y})
 
+            # Extract tables from pdfplumber
+            tables = plumber_page.find_tables()
+            for table in tables:
+                try:
+                    table_data = table.extract()
+                    if not table_data or all(not any(cell for cell in row) for row in table_data):
+                        continue  # skip empty or broken tables
+                    df = pd.DataFrame(table_data[1:], columns=table_data[0]) if len(table_data) > 1 else pd.DataFrame(table_data)
+                    markdown_table = df.to_markdown(index=False)
+                    y = table.bbox[1]  # top Y of the table
+                    text_blocks.append({"type": "table", "content": markdown_table, "y": y})
+                except Exception as e:
+                    continue
+
+            # Sort all by Y position (top to bottom)
+            text_blocks.sort(key=lambda b: b["y"])
+
+            # Combine content in visual order
+            combined_text = ""
+            for block in text_blocks:
+                if block["type"] == "text":
+                    combined_text += block["content"] + "\n\n"
+                elif block["type"] == "table":
+                    combined_text += block["content"] + "\n\n"
+
+            # Extract first image on page (if any)
+            image_path = None
+            images = page.get_images(full=True)
+            if images:
+                xref = images[0][0]
+                pix = fitz.Pixmap(doc, xref)
+                if pix.n > 4:
+                    pix = fitz.Pixmap(fitz.csRGB, pix)
+                img_filename = f"page_{page_num + 1}.png"
+                img_full_path = os.path.join(image_output_dir, img_filename)
+                pix.save(img_full_path)
+                pix = None
+                image_path = img_full_path
+
+            combined_pages.append({
+                "text": combined_text.strip(),
+                "image_path": image_path
+            })
+    # print(combined_pages)
     return combined_pages
 
 #! content extraction from the response of the json
@@ -194,28 +262,28 @@ Return a JSON list of slides like this:
   {
     "layout": "title_and_content",
     "title": "title(max 65 characters)",
-    "content": "approax 1250 character if sentence cross the more than 80 character enter new line"
+    "content": "approax 1250 character, add \n for new line"
   },
   {
     "layout": "two_content",
     "title": "max 65 characters",
-    "content": "450 to 460 max character if sentence cross the more than 37 character enter new line"
+    "content": "450 to 460 max character, add \n for new line"
   },
   {
     "layout": "section_header",
-    "title": "max 60 char",
-    "sub_heading": "270 character if sentence exceed the 90 character use new line"
+    "title": "max 60 characters",
+    "sub_heading": "270 character, add \n for new line"
   },
   {
     "layout": "comparison",
-    "title": "max 60 char",
+    "title": "max 60 characters",
     "left_content": {
       "title": "max 36 characters",
-      "content": "max 360 characters if sentence exceed 30 charcters use new line"
+      "content": "max 360 characters, add \n for new line"
     },
     "right_layout": {
       "title": "max 36 characters",
-      "content": "max 360 characters if sentence exceed 30 charcters use new line"
+      "content": "max 360 characters, add \n for new line"
     }
   },
   {
@@ -229,8 +297,8 @@ Return a JSON list of slides like this:
   {
     "layout": "image_with_caption",
     "image_path": "image_path_goes_here",
-    "title": "max 60 characters",
-    "content": "max 300 characters"
+    "title": "max 60 chracters",
+    "content": "max 250 characters, add \n for new line"
   },
   {
     "layout": "title_with_table",
@@ -278,5 +346,5 @@ def convert_pdf_to_slide_json(pdf_path, output_json_path="slides.json"):
     print("✅ Done.")
 
 # === USAGE ===
-pdf_path = "uploads\pdf1.pdf"
+pdf_path = "testing_uploads/PS QB.pdf"
 convert_pdf_to_slide_json(pdf_path)
