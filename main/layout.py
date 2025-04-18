@@ -1079,8 +1079,6 @@ def add_table_slide(prs, slide_data):
     Returns:
         List of created slides
     """
-    add_layout_styled_background (prs, slide_data, layout_type="title_slide")
-
     table_data = slide_data.get("table", {})
     headers = table_data.get("headers", [])
     rows = table_data.get("rows", [])
@@ -1119,7 +1117,7 @@ def create_table_slide(prs, slide_data):
     """
     # Use slide layout 1 (Title and Content)
     slide = prs.slides.add_slide(prs.slide_layouts[1])
-    # apply_slide_background(slide)
+    apply_slide_background(slide)
 
     # Use the built-in title placeholder
     if slide.shapes.title:
@@ -1183,15 +1181,15 @@ def create_table_slide(prs, slide_data):
     optimize_table_layout_adaptive(table, headers, rows, n_rows)
     
     # Add footer with page numbers if multiple pages
-    # if slide_data.get("total_pages", 1) > 1:
-    #     add_page_footer(slide, slide_data.get("page_number", 1), slide_data.get("total_pages", 1))
+    if slide_data.get("total_pages", 1) > 1:
+        add_page_footer(slide, slide_data.get("page_number", 1), slide_data.get("total_pages", 1))
 
     return slide
 
 def create_empty_table_slide(prs, slide_data):
     """Create a slide indicating no data is available"""
     slide = prs.slides.add_slide(prs.slide_layouts[1])
-    # apply_slide_background(slide)
+    apply_slide_background(slide)
     
     if slide.shapes.title:
         title_shape = slide.shapes.title
@@ -1486,27 +1484,27 @@ def calculate_column_widths_adaptive(headers, rows):
     
     return percentages
 
-# def add_page_footer(slide, page_num, total_pages):
-#     """Add compact page number footer to slide"""
-#     footer = slide.shapes.add_textbox(
-#         Inches(0.5), Inches(7.1), Inches(9), Inches(0.2)
-#     )
-#     tf = footer.text_frame
-#     p = tf.add_paragraph()
-#     p.text = f"Page {page_num} of {total_pages}"
-#     p.font.size = Pt(9)  # Smaller font
-#     p.font.color.rgb = RGBColor(100, 100, 100)
-#     p.alignment = PP_ALIGN.RIGHT
+def add_page_footer(slide, page_num, total_pages):
+    """Add compact page number footer to slide"""
+    footer = slide.shapes.add_textbox(
+        Inches(0.5), Inches(7.1), Inches(9), Inches(0.2)
+    )
+    tf = footer.text_frame
+    p = tf.add_paragraph()
+    p.text = f"Page {page_num} of {total_pages}"
+    p.font.size = Pt(9)  # Smaller font
+    p.font.color.rgb = RGBColor(100, 100, 100)
+    p.alignment = PP_ALIGN.RIGHT
 
-# def apply_slide_background(slide):
-#     """Apply a subtle gradient background to the slide"""
-#     fill = slide.background.fill
-#     fill.gradient()
-#     fill.gradient_angle = 90
-#     fill.gradient_stops[0].position = 0
-#     fill.gradient_stops[0].color.rgb = RGBColor(250, 250, 252)
-#     fill.gradient_stops[1].position = 1
-#     fill.gradient_stops[1].color.rgb = RGBColor(240, 245, 250)
+def apply_slide_background(slide):
+    """Apply a subtle gradient background to the slide"""
+    fill = slide.background.fill
+    fill.gradient()
+    fill.gradient_angle = 90
+    fill.gradient_stops[0].position = 0
+    fill.gradient_stops[0].color.rgb = RGBColor(250, 250, 252)
+    fill.gradient_stops[1].position = 1
+    fill.gradient_stops[1].color.rgb = RGBColor(240, 245, 250)
 
 
 def format_text(text, max_line_length):

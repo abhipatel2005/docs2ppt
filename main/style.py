@@ -60,70 +60,6 @@ def add_layout_styled_background(prs, slide, layout_type):
             slide.shapes._spTree.remove(card._element)
             slide.shapes._spTree.insert(3, card._element)
 
-    def add_table_slide_style(prs, slide, layout_type="title_with_table"):
-        """
-        Apply a styled background for table slides that matches other layout styles
-        
-        Parameters:
-            prs: PowerPoint presentation object
-            slide: The slide to apply styling to
-        """
-        slide_width = prs.slide_width
-        slide_height = prs.slide_height
-        
-        # Create light background
-        bg = slide.shapes.add_shape(
-            MSO_SHAPE.RECTANGLE, 0, 0, slide_width, slide_height
-        )
-        bg.fill.solid()
-        bg.fill.fore_color.rgb = RGBColor(234, 239, 242)  # Light color
-        bg.line.fill.background()
-        
-        # Make sure background is behind other elements
-        slide.shapes._spTree.remove(bg._element)
-        slide.shapes._spTree.insert(2, bg._element)
-        
-        # Add thin accent bar on top for visual interest
-        accent_bar = slide.shapes.add_shape(
-            MSO_SHAPE.RECTANGLE, 
-            0, 
-            int(slide_height * 0.05),  # Positioned below title
-            slide_width, 
-            int(slide_height * 0.01)   # Very thin bar
-        )
-        accent_bar.fill.solid()
-        accent_bar.fill.fore_color.rgb = RGBColor(39, 68, 114)  # Dark accent color
-        accent_bar.line.fill.background()
-        slide.shapes._spTree.remove(accent_bar._element)
-        slide.shapes._spTree.insert(3, accent_bar._element)
-        
-        # Add bottom stripe similar to title_and_content layout
-        stripe_height = int(slide_height * 0.08)  # Slightly thinner than original
-        stripe = slide.shapes.add_shape(
-            MSO_SHAPE.RECTANGLE, 
-            0, 
-            slide_height - stripe_height, 
-            slide_width, 
-            stripe_height
-        )
-        stripe.fill.solid()
-        stripe.fill.fore_color.rgb = RGBColor(39, 68, 114)  # Dark accent color
-        stripe.line.fill.background()
-        slide.shapes._spTree.remove(stripe._element)
-        slide.shapes._spTree.insert(3, stripe._element)
-    
-    def add_top_accent_bar(color, height_ratio=0.01, position_ratio=0.05):
-        bar_height = int(slide_height * height_ratio)
-        bar_top = int(slide_height * position_ratio)
-        bar = slide.shapes.add_shape(
-            MSO_SHAPE.RECTANGLE, 0, bar_top, slide_width, bar_height
-        )
-        bar.fill.solid()
-        bar.fill.fore_color.rgb = RGBColor(*color)
-        bar.line.fill.background()
-        slide.shapes._spTree.remove(bar._element)
-        slide.shapes._spTree.insert(3, bar._element)
-
     # Style each layout uniquely
     if layout_type == "title_slide":
         add_background_fill((39, 68, 114))  # light_color
@@ -186,16 +122,3 @@ def add_layout_styled_background(prs, slide, layout_type):
                 shape.top = int(slide_height * 0.25)
                 shape.width = int(slide_width * 0.35)
                 shape.height = int(slide_height * 0.5)
-
-    elif layout_type == "table_slide":
-        # Light background like the title_and_content layout
-        add_background_fill((234, 239, 242))
-        
-        # Add thin accent bar below title area
-        add_top_accent_bar((39, 68, 114))
-        
-        # Add bottom stripe similar to title_and_content layout but slightly thinner
-        add_bottom_stripe((39, 68, 114), height_ratio=0.08)
-
-    else:
-        add_background_fill((39, 68, 114))
