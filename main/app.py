@@ -57,7 +57,7 @@ def safe_generate_response(prompt, retries=3, delay=5):
 #         })
 #     return combined_pages
 
-def extract_pdf_content(pdf_path, image_output_dir="D:\\temp\\pdf_images"):
+def extract_pdf_content(pdf_path, image_output_dir="D:\\temp\\main\\pdf_images"):
     os.makedirs(image_output_dir, exist_ok=True)
     doc = fitz.open(pdf_path)
     combined_pages = []
@@ -165,59 +165,6 @@ def convert_gemini_response_to_list(response):
     except Exception as e:
         print(f"Unexpected error: {e}")
         return None
-
-# === STEP 3: Ask Gemini to generate rich slide layouts ===
-# def generate_slide_data(content_blocks):
-#     # Combine text per section, keeping track of image context
-#     sections = []
-#     for i, block in enumerate(content_blocks):
-#         if block["text"]:
-#             entry = {
-#                 "page": i + 1,
-#                 "text": block["text"],
-#                 "image_path": block["image_path"]
-#             }
-#             sections.append(entry)
-
-#     # Build prompt for Gemini
-#     sections_text = "\n\n".join([
-#         f"Page {sec['page']}:\n{sec['text']}" +
-#         (f"\n[IMAGE_PATH: {sec['image_path']}]" if sec['image_path'] else "")
-#         for sec in sections
-#     ])
-
-#     prompt = f"""
-# You are a presentation expert.
-
-# Convert the following document into a Microsoft PowerPoint presentation using various layouts based on content type.
-
-# Supported layouts:
-# - Title Slide
-# - Section Header
-# - Title and Content
-# - Two Content
-# - Comparison
-# - Picture with Caption
-# - Title and Table
-
-# Return a JSON list of slides like this:
-# {{
-#   "layout": "Title and Content",
-#   "title": "Blockchain Basics",
-#   "content": ["Definition", "How it works"],
-#   "image_path": "/path/to/image.png"  ← Only include this if image was present on that page
-# }}
-
-# Only include image_path if it was explicitly mentioned as [IMAGE_PATH: ...] in the source.
-
-# Here is the source:
-# \"\"\"{sections_text}\"\"\"
-# """
-#     response = model.generate_content(prompt)
-#     print(type(response))
-#     convert_gemini_response_to_list(response)
-#     print(type(convert_gemini_response_to_list(response)))
-#     return response.text
 
 def chunk_content(content_blocks, chunk_size=3):
     return [content_blocks[i:i + chunk_size] for i in range(0, len(content_blocks), chunk_size)]
@@ -346,5 +293,5 @@ def convert_pdf_to_slide_json(pdf_path, output_json_path="slides.json"):
     print("✅ Done.")
 
 # === USAGE ===
-pdf_path = "testing_uploads/revised_guidelines_css_pt.pdf"
+pdf_path = "D:\\temp\\uploads\\revised_guidelines_css_pt.pdf"   # your pdf/docs path goes here
 convert_pdf_to_slide_json(pdf_path)

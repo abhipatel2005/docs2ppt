@@ -20,17 +20,19 @@ Built with ❤️ for educators, students, and fast-moving teams.
 
 ## 🧰 Tech Stack
 
-| Tool           | Purpose                            |
-|----------------|------------------------------------|
-| `python-pptx`  | Generate PowerPoint presentations  |
-| `Google Gemini`| Summarize and chunk content smartly|
-| `pdfminer.six` | Extract text from PDFs             |
-| `python-docx`  | Extract text from DOCX files       |
-| `json`         | Intermediate format for slides     |
+| Tool            | Purpose                             |
+| --------------- | ----------------------------------- |
+| `python-pptx`   | Generate PowerPoint presentations   |
+| `Google Gemini` | Summarize and chunk content smartly |
+| `pdfminer.six`  | Extract text from PDFs              |
+| `python-docx`   | Extract text from DOCX files        |
+| `json`          | Intermediate format for slides      |
 
 ---
 
 ## 🖼️ Sample Workflow
+
+### Go to main folder and do the following steps
 
 ```bash
 # Step 1: Extract & summarize
@@ -38,3 +40,4 @@ python app.py
 
 # Step 2: Generate slides
 python demo.py slides.json --output my_presentation.pptx
+```
