@@ -4,6 +4,8 @@ import uuid
 from pdf_to_json import extract_pdf_content, generate_slide_data
 from main import create_presentation_from_json
 from pptx import Presentation
+import sys
+print("🧪 Python version:", sys.version)
 
 BASE_UPLOAD_FOLDER = "uploads"
 BASE_OUTPUT_FOLDER = "output"
