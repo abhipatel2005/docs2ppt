@@ -8,4 +8,3 @@ flask
 fitz
 PyMuPDF
 panda
-time
