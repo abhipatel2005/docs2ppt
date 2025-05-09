@@ -1,0 +1,12 @@
+python-pptx
+dotenv
+google.generative-ai
+pdfplumber
+pdfminer
+uuid
+flask
+fitz
+PyMuPDF
+panda
+json
+time
