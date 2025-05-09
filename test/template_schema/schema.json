@@ -1,0 +1,590 @@
+[
+  {
+    "layout_index": 0,
+    "layout": "title_slide",
+    "placeholders": [
+      {
+        "placeholder_type": 3,
+        "left": 1.905,
+        "top": 5.917847222222222,
+        "width": 21.59,
+        "height": 4.083402777777778,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 4,
+        "left": 3.81,
+        "top": 10.795,
+        "width": 17.78,
+        "height": 4.868333333333333,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 16,
+        "left": 1.27,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 15,
+        "left": 8.678333333333333,
+        "top": 17.65652777777778,
+        "width": 8.043333333333333,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 13,
+        "left": 18.203333333333333,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      }
+    ]
+  },
+  {
+    "layout_index": 1,
+    "layout": "title_and_content",
+    "placeholders": [
+      {
+        "placeholder_type": 1,
+        "left": 1.27,
+        "top": 0.7628833333333334,
+        "width": 22.86,
+        "height": 3.175,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 7,
+        "left": 1.27,
+        "top": 4.445,
+        "width": 22.86,
+        "height": 12.572119444444445,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 16,
+        "left": 1.27,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 15,
+        "left": 8.678333333333333,
+        "top": 17.65652777777778,
+        "width": 8.043333333333333,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 13,
+        "left": 18.203333333333333,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      }
+    ]
+  },
+  {
+    "layout_index": 2,
+    "layout": "section_header",
+    "placeholders": [
+      {
+        "placeholder_type": 1,
+        "left": 2.006425,
+        "top": 12.241388888888888,
+        "width": 21.59,
+        "height": 3.783541666666667,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 2,
+        "left": 2.006425,
+        "top": 8.074202777777778,
+        "width": 21.59,
+        "height": 4.1671861111111115,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 16,
+        "left": 1.27,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 15,
+        "left": 8.678333333333333,
+        "top": 17.65652777777778,
+        "width": 8.043333333333333,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 13,
+        "left": 18.203333333333333,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      }
+    ]
+  },
+  {
+    "layout_index": 3,
+    "layout": "two_content",
+    "placeholders": [
+      {
+        "placeholder_type": 1,
+        "left": 1.27,
+        "top": 0.7628833333333334,
+        "width": 22.86,
+        "height": 3.175,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 7,
+        "left": 1.27,
+        "top": 4.445,
+        "width": 11.218333333333334,
+        "height": 12.572119444444445,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 7,
+        "left": 12.911666666666667,
+        "top": 4.445,
+        "width": 11.218333333333334,
+        "height": 12.572119444444445,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 16,
+        "left": 1.27,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 15,
+        "left": 8.678333333333333,
+        "top": 17.65652777777778,
+        "width": 8.043333333333333,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 13,
+        "left": 18.203333333333333,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      }
+    ]
+  },
+  {
+    "layout_index": 4,
+    "layout": "comparison",
+    "placeholders": [
+      {
+        "placeholder_type": 1,
+        "left": 1.27,
+        "top": 0.7628833333333334,
+        "width": 22.86,
+        "height": 3.175,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 2,
+        "left": 1.27,
+        "top": 4.264202777777777,
+        "width": 11.222744444444444,
+        "height": 1.7771166666666667,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 7,
+        "left": 1.27,
+        "top": 6.0413194444444445,
+        "width": 11.222744444444444,
+        "height": 10.9758,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 2,
+        "left": 12.902847222222222,
+        "top": 4.264202777777777,
+        "width": 11.227152777777778,
+        "height": 1.7771166666666667,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 7,
+        "left": 12.902847222222222,
+        "top": 6.0413194444444445,
+        "width": 11.227152777777778,
+        "height": 10.9758,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 16,
+        "left": 1.27,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 15,
+        "left": 8.678333333333333,
+        "top": 17.65652777777778,
+        "width": 8.043333333333333,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 13,
+        "left": 18.203333333333333,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      }
+    ]
+  },
+  {
+    "layout_index": 5,
+    "layout": "title_only",
+    "placeholders": [
+      {
+        "placeholder_type": 1,
+        "left": 1.27,
+        "top": 0.7628833333333334,
+        "width": 22.86,
+        "height": 3.175,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 16,
+        "left": 1.27,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 15,
+        "left": 8.678333333333333,
+        "top": 17.65652777777778,
+        "width": 8.043333333333333,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 13,
+        "left": 18.203333333333333,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      }
+    ]
+  },
+  {
+    "layout_index": 6,
+    "layout": "blank",
+    "placeholders": [
+      {
+        "placeholder_type": 16,
+        "left": 1.27,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 15,
+        "left": 8.678333333333333,
+        "top": 17.65652777777778,
+        "width": 8.043333333333333,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 13,
+        "left": 18.203333333333333,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      }
+    ]
+  },
+  {
+    "layout_index": 7,
+    "layout": "content_with_caption",
+    "placeholders": [
+      {
+        "placeholder_type": 1,
+        "left": 1.27,
+        "top": 0.7584722222222222,
+        "width": 8.356425,
+        "height": 3.2279166666666668,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 7,
+        "left": 9.930694444444445,
+        "top": 0.7584722222222222,
+        "width": 14.199305555555556,
+        "height": 16.258647222222223,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 2,
+        "left": 1.27,
+        "top": 3.986388888888889,
+        "width": 8.356425,
+        "height": 13.030730555555555,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 16,
+        "left": 1.27,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 15,
+        "left": 8.678333333333333,
+        "top": 17.65652777777778,
+        "width": 8.043333333333333,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 13,
+        "left": 18.203333333333333,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      }
+    ]
+  },
+  {
+    "layout_index": 8,
+    "layout": "image_with_caption",
+    "placeholders": [
+      {
+        "placeholder_type": 1,
+        "left": 4.978577777777778,
+        "top": 13.335,
+        "width": 15.24,
+        "height": 1.5742722222222223,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 18,
+        "left": 4.978577777777778,
+        "top": 1.7021527777777778,
+        "width": 15.24,
+        "height": 11.43,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 2,
+        "left": 4.978577777777778,
+        "top": 14.909272222222222,
+        "width": 15.24,
+        "height": 2.235727777777778,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 16,
+        "left": 1.27,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 15,
+        "left": 8.678333333333333,
+        "top": 17.65652777777778,
+        "width": 8.043333333333333,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 13,
+        "left": 18.203333333333333,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      }
+    ]
+  },
+  {
+    "layout_index": 9,
+    "layout": "Title and Vertical Text",
+    "placeholders": [
+      {
+        "placeholder_type": 1,
+        "left": 1.27,
+        "top": 0.7628833333333334,
+        "width": 22.86,
+        "height": 3.175,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 2,
+        "left": 1.27,
+        "top": 4.445,
+        "width": 22.86,
+        "height": 12.572119444444445,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 16,
+        "left": 1.27,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 15,
+        "left": 8.678333333333333,
+        "top": 17.65652777777778,
+        "width": 8.043333333333333,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 13,
+        "left": 18.203333333333333,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      }
+    ]
+  },
+  {
+    "layout_index": 10,
+    "layout": "Vertical Title and Text",
+    "placeholders": [
+      {
+        "placeholder_type": 1,
+        "left": 18.415,
+        "top": 0.7628833333333334,
+        "width": 5.715,
+        "height": 16.254236111111112,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 2,
+        "left": 1.27,
+        "top": 0.7628833333333334,
+        "width": 16.721666666666668,
+        "height": 16.254236111111112,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 16,
+        "left": 1.27,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 15,
+        "left": 8.678333333333333,
+        "top": 17.65652777777778,
+        "width": 8.043333333333333,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      },
+      {
+        "placeholder_type": 13,
+        "left": 18.203333333333333,
+        "top": 17.65652777777778,
+        "width": 5.926666666666667,
+        "height": 1.0142361111111111,
+        "font_size_pt": null,
+        "font_color": null
+      }
+    ]
+  }
+]

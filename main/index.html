@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,26 +18,26 @@
             --gray: #adb5bd;
             --light-gray: #e9ecef;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background-color: var(--light);
             color: var(--dark);
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
+
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -45,13 +46,13 @@
             border-radius: 0 0 20px 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         header h1 {
             text-align: center;
             font-size: 2.5rem;
             font-weight: 700;
         }
-        
+
         header p {
             text-align: center;
             font-size: 1.1rem;
@@ -59,13 +60,13 @@
             max-width: 700px;
             margin: 10px auto 0;
         }
-        
+
         .main-content {
             display: flex;
             flex-direction: column;
             gap: 30px;
         }
-        
+
         .upload-section {
             background-color: white;
             border-radius: 20px;
@@ -73,12 +74,12 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
-        
+
         .upload-section:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .upload-area {
             border: 2px dashed var(--gray);
             border-radius: 15px;
@@ -88,33 +89,34 @@
             margin: 20px 0;
             transition: all 0.3s ease;
         }
-        
-        .upload-area:hover, .upload-area.active {
+
+        .upload-area:hover,
+        .upload-area.active {
             border-color: var(--primary);
             background-color: rgba(67, 97, 238, 0.05);
         }
-        
+
         .upload-icon {
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 15px;
         }
-        
+
         .upload-area h3 {
             font-size: 1.4rem;
             margin-bottom: 10px;
             color: var(--dark);
         }
-        
+
         .upload-area p {
             color: var(--gray);
             margin-bottom: 15px;
         }
-        
+
         .file-input {
             display: none;
         }
-        
+
         .btn {
             background-color: var(--primary);
             color: white;
@@ -127,42 +129,42 @@
             transition: all 0.3s ease;
             display: inline-block;
         }
-        
+
         .btn:hover {
             background-color: var(--secondary);
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
         }
-        
+
         .btn:active {
             transform: translateY(0);
         }
-        
+
         .btn-lg {
             padding: 14px 28px;
             font-size: 1.1rem;
         }
-        
+
         .btn-block {
             display: block;
             width: 100%;
         }
-        
+
         .status-section {
             background-color: white;
             border-radius: 20px;
             padding: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .status-container {
             display: none;
         }
-        
+
         .progress-container {
             margin: 30px 0;
         }
-        
+
         .progress-bar-container {
             width: 100%;
             height: 15px;
@@ -171,7 +173,7 @@
             overflow: hidden;
             margin-top: 10px;
         }
-        
+
         .progress-bar {
             height: 100%;
             background: linear-gradient(90deg, var(--primary), var(--success));
@@ -179,11 +181,11 @@
             transition: width 0.4s ease;
             border-radius: 10px;
         }
-        
+
         .status-steps {
             margin-top: 30px;
         }
-        
+
         .step {
             display: flex;
             align-items: flex-start;
@@ -191,11 +193,11 @@
             opacity: 0.5;
             transition: all 0.3s ease;
         }
-        
+
         .step.active {
             opacity: 1;
         }
-        
+
         .step-icon {
             background-color: var(--light-gray);
             color: var(--gray);
@@ -209,26 +211,26 @@
             flex-shrink: 0;
             transition: all 0.3s ease;
         }
-        
+
         .step.completed .step-icon {
             background-color: var(--success);
             color: white;
         }
-        
+
         .step-content {
             flex-grow: 1;
         }
-        
+
         .step-title {
             font-weight: 600;
             margin-bottom: 5px;
         }
-        
+
         .step-description {
             color: var(--gray);
             font-size: 0.9rem;
         }
-        
+
         .result-section {
             background-color: white;
             border-radius: 20px;
@@ -237,13 +239,13 @@
             text-align: center;
             display: none;
         }
-        
+
         .result-icon {
             font-size: 4rem;
             color: var(--success);
             margin-bottom: 20px;
         }
-        
+
         .file-details {
             display: flex;
             align-items: center;
@@ -253,41 +255,41 @@
             background-color: var(--light);
             border-radius: 15px;
         }
-        
+
         .file-icon {
             font-size: 2.5rem;
             color: var(--primary);
             margin-right: 20px;
         }
-        
+
         .file-info h4 {
             font-size: 1.2rem;
             margin-bottom: 5px;
         }
-        
+
         .file-info p {
             color: var(--gray);
             font-size: 0.9rem;
         }
-        
+
         .download-btn {
             background-color: var(--success);
         }
-        
+
         .download-btn:hover {
             background-color: #3ab4d9;
         }
-        
+
         .restart-btn {
             background-color: var(--light);
             color: var(--dark);
             margin-top: 15px;
         }
-        
+
         .restart-btn:hover {
             background-color: var(--light-gray);
         }
-        
+
         .error-message {
             background-color: rgba(247, 37, 133, 0.1);
             border-left: 4px solid var(--danger);
@@ -297,13 +299,13 @@
             margin: 20px 0;
             display: none;
         }
-        
+
         .file-list {
             margin: 20px 0;
             max-height: 200px;
             overflow-y: auto;
         }
-        
+
         .file-item {
             display: flex;
             align-items: center;
@@ -313,29 +315,29 @@
             border-radius: 8px;
             margin-bottom: 10px;
         }
-        
+
         .file-item-name {
             display: flex;
             align-items: center;
         }
-        
+
         .file-item-icon {
             color: var(--primary);
             margin-right: 10px;
             font-size: 1.2rem;
         }
-        
+
         .file-item-remove {
             color: var(--danger);
             cursor: pointer;
             font-size: 1.2rem;
             transition: all 0.2s ease;
         }
-        
+
         .file-item-remove:hover {
             transform: scale(1.2);
         }
-        
+
         footer {
             text-align: center;
             padding: 30px 0;
@@ -343,30 +345,30 @@
             font-size: 0.9rem;
             margin-top: 50px;
         }
-        
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
             }
-            
+
             .upload-icon {
                 font-size: 2.5rem;
             }
-            
+
             .upload-area h3 {
                 font-size: 1.2rem;
             }
-            
+
             .btn-lg {
                 padding: 12px 24px;
                 font-size: 1rem;
             }
-            
+
             .file-details {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .file-icon {
                 margin-right: 0;
                 margin-bottom: 15px;
@@ -374,6 +376,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -381,14 +384,14 @@
             <p>Transform your PDF documents into professional PowerPoint presentations with just a few clicks</p>
         </div>
     </header>
-    
+
     <div class="container">
         <div class="main-content">
             <!-- Upload Section -->
             <section class="upload-section" id="uploadSection">
                 <h2>Upload Your Document</h2>
                 <p>Select a PDF or DOCX file to convert to PowerPoint presentation</p>
-                
+
                 <div class="upload-area" id="dropArea">
                     <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
                     <h3>Drag & Drop your file here</h3>
@@ -396,23 +399,23 @@
                     <input type="file" id="fileInput" class="file-input" accept=".pdf,.docx">
                     <button class="btn" id="browseBtn">Browse Files</button>
                 </div>
-                
+
                 <div class="file-list" id="fileList"></div>
-                
+
                 <div class="error-message" id="errorMessage">
                     <i class="fa-solid fa-circle-exclamation"></i>
                     <span id="errorText">Error message goes here</span>
                 </div>
-                
+
                 <button class="btn btn-lg btn-block" id="convertBtn" disabled>Convert to PowerPoint</button>
             </section>
-            
+
             <!-- Processing Status Section -->
             <section class="status-section" id="statusSection">
                 <div class="status-container" id="statusContainer">
                     <h2>Processing Your Document</h2>
                     <p>Please wait while we convert your document to PowerPoint</p>
-                    
+
                     <div class="progress-container">
                         <div class="progress-text">
                             <span id="progressStatus">Processing...</span>
@@ -422,7 +425,7 @@
                             <div class="progress-bar" id="progressBar"></div>
                         </div>
                     </div>
-                    
+
                     <div class="status-steps">
                         <div class="step" id="step1">
                             <div class="step-icon">
@@ -433,7 +436,7 @@
                                 <div class="step-description">Your file is being uploaded to our server</div>
                             </div>
                         </div>
-                        
+
                         <div class="step" id="step2">
                             <div class="step-icon">
                                 <i class="fa-solid fa-file-lines"></i>
@@ -443,36 +446,38 @@
                                 <div class="step-description">Extracting text and images from your document</div>
                             </div>
                         </div>
-                        
+
                         <div class="step" id="step3">
                             <div class="step-icon">
                                 <i class="fa-solid fa-brain"></i>
                             </div>
                             <div class="step-content">
                                 <div class="step-title">AI Processing</div>
-                                <div class="step-description">Our AI is analyzing your content and designing slides</div>
+                                <div class="step-description">Our AI is analyzing your content and designing slides
+                                </div>
                             </div>
                         </div>
-                        
+
                         <div class="step" id="step4">
                             <div class="step-icon">
                                 <i class="fa-solid fa-file-powerpoint"></i>
                             </div>
                             <div class="step-content">
                                 <div class="step-title">Creating PowerPoint</div>
-                                <div class="step-description">Generating your presentation with appropriate layouts</div>
+                                <div class="step-description">Generating your presentation with appropriate layouts
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            
+
             <!-- Result Section -->
             <section class="result-section" id="resultSection">
                 <i class="fa-solid fa-circle-check result-icon"></i>
                 <h2>Conversion Complete!</h2>
                 <p>Your PowerPoint presentation is ready to download</p>
-                
+
                 <div class="file-details">
                     <div class="file-icon">
                         <i class="fa-solid fa-file-powerpoint"></i>
@@ -482,18 +487,18 @@
                         <p id="resultFileSize">Size: 1.2 MB</p>
                     </div>
                 </div>
-                
+
                 <a href="#" class="btn btn-lg download-btn" id="downloadBtn">
                     <i class="fa-solid fa-download"></i> Download Presentation
                 </a>
-                
+
                 <button class="btn restart-btn" id="restartBtn">
                     <i class="fa-solid fa-arrow-rotate-left"></i> Convert Another Document
                 </button>
             </section>
         </div>
     </div>
-    
+
     <footer>
         <div class="container">
             <p>© 2025 PDF to PowerPoint Converter. All rights reserved.</p>
@@ -520,111 +525,111 @@
             const resultFileSize = document.getElementById('resultFileSize');
             const downloadBtn = document.getElementById('downloadBtn');
             const restartBtn = document.getElementById('restartBtn');
-            
+
             // Steps
             const step1 = document.getElementById('step1');
             const step2 = document.getElementById('step2');
             const step3 = document.getElementById('step3');
             const step4 = document.getElementById('step4');
-            
+
             let selectedFile = null;
-            
+
             // Event Listeners
             browseBtn.addEventListener('click', () => {
                 fileInput.click();
             });
-            
+
             fileInput.addEventListener('change', handleFileSelect);
-            
+
             // Drag and drop
             ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
                 dropArea.addEventListener(eventName, preventDefaults, false);
             });
-            
+
             ['dragenter', 'dragover'].forEach(eventName => {
                 dropArea.addEventListener(eventName, highlight, false);
             });
-            
+
             ['dragleave', 'drop'].forEach(eventName => {
                 dropArea.addEventListener(eventName, unhighlight, false);
             });
-            
+
             dropArea.addEventListener('drop', handleDrop, false);
-            
+
             // Convert button
             convertBtn.addEventListener('click', startConversion);
-            
+
             // Restart button
             restartBtn.addEventListener('click', restartProcess);
-            
+
             // Functions
             function preventDefaults(e) {
                 e.preventDefault();
                 e.stopPropagation();
             }
-            
+
             function highlight() {
                 dropArea.classList.add('active');
             }
-            
+
             function unhighlight() {
                 dropArea.classList.remove('active');
             }
-            
+
             function handleDrop(e) {
                 const dt = e.dataTransfer;
                 const files = dt.files;
                 handleFiles(files);
             }
-            
+
             function handleFileSelect(e) {
                 const files = e.target.files;
                 handleFiles(files);
             }
-            
+
             function handleFiles(files) {
                 if (files.length > 0) {
                     const file = files[0];
-                    
+
                     // Check file type
                     if (!file.type.match('application/pdf') && !file.name.endsWith('.docx')) {
                         showError('Please select a PDF or DOCX file');
                         return;
                     }
-                    
+
                     // Check file size (max 20MB)
                     if (file.size > 20 * 1024 * 1024) {
                         showError('File size should be less than 20MB');
                         return;
                     }
-                    
+
                     selectedFile = file;
                     updateFileList(file);
                     convertBtn.disabled = false;
                     hideError();
                 }
             }
-            
+
             function updateFileList(file) {
                 fileList.innerHTML = '';
-                
+
                 const fileItem = document.createElement('div');
                 fileItem.className = 'file-item';
-                
+
                 const fileItemName = document.createElement('div');
                 fileItemName.className = 'file-item-name';
-                
+
                 const fileItemIcon = document.createElement('i');
-                fileItemIcon.className = file.type === 'application/pdf' ? 
-                    'fa-solid fa-file-pdf file-item-icon' : 
+                fileItemIcon.className = file.type === 'application/pdf' ?
+                    'fa-solid fa-file-pdf file-item-icon' :
                     'fa-solid fa-file-word file-item-icon';
-                
+
                 const fileNameSpan = document.createElement('span');
                 fileNameSpan.textContent = file.name;
-                
+
                 fileItemName.appendChild(fileItemIcon);
                 fileItemName.appendChild(fileNameSpan);
-                
+
                 const fileItemRemove = document.createElement('i');
                 fileItemRemove.className = 'fa-solid fa-xmark file-item-remove';
                 fileItemRemove.addEventListener('click', () => {
@@ -633,74 +638,74 @@
                     convertBtn.disabled = true;
                     fileInput.value = '';
                 });
-                
+
                 fileItem.appendChild(fileItemName);
                 fileItem.appendChild(fileItemRemove);
                 fileList.appendChild(fileItem);
             }
-            
+
             function showError(message) {
                 errorText.textContent = message;
                 errorMessage.style.display = 'block';
             }
-            
+
             function hideError() {
                 errorMessage.style.display = 'none';
             }
-            
+
             function startConversion() {
                 if (!selectedFile) return;
-                
+
                 // Show status section
                 uploadSection.style.display = 'none';
                 statusSection.style.display = 'block';
                 statusContainer.style.display = 'block';
-                
+
                 // Reset progress
                 updateProgress(0);
                 resetSteps();
-                
+
                 // Mock the conversion process (simulation)
                 simulateConversion();
             }
-            
+
             function simulateConversion() {
                 // In a real app, this would be an API call to your backend
-                
+
                 // Step 1: Upload
                 updateStep(step1, 'active');
                 updateProgress(10);
                 updateProgressStatus('Uploading document...');
-                
+
                 setTimeout(() => {
                     updateStep(step1, 'completed');
                     updateProgress(25);
-                    
+
                     // Step 2: Extract Content
                     updateStep(step2, 'active');
                     updateProgressStatus('Extracting content from document...');
-                    
+
                     setTimeout(() => {
                         updateStep(step2, 'completed');
                         updateProgress(50);
-                        
+
                         // Step 3: AI Processing
                         updateStep(step3, 'active');
                         updateProgressStatus('AI is analyzing your content...');
-                        
+
                         setTimeout(() => {
                             updateStep(step3, 'completed');
                             updateProgress(75);
-                            
+
                             // Step 4: Creating PowerPoint
                             updateStep(step4, 'active');
                             updateProgressStatus('Creating PowerPoint presentation...');
-                            
+
                             setTimeout(() => {
                                 updateStep(step4, 'completed');
                                 updateProgress(100);
                                 updateProgressStatus('Conversion complete!');
-                                
+
                                 // Show result
                                 setTimeout(showResult, 1000);
                             }, 3000);
@@ -708,16 +713,16 @@
                     }, 3000);
                 }, 2000);
             }
-            
+
             function updateProgress(percent) {
                 progressBar.style.width = `${percent}%`;
                 progressPercentage.textContent = `${percent}%`;
             }
-            
+
             function updateProgressStatus(status) {
                 progressStatus.textContent = status;
             }
-            
+
             function updateStep(step, state) {
                 if (state === 'active') {
                     step.classList.add('active');
@@ -726,41 +731,41 @@
                     step.classList.add('completed');
                 }
             }
-            
+
             function resetSteps() {
                 [step1, step2, step3, step4].forEach(step => {
                     step.classList.remove('active');
                     step.classList.remove('completed');
                 });
             }
-            
+
             function showResult() {
                 statusSection.style.display = 'none';
                 resultSection.style.display = 'block';
-                
+
                 // Update result info
                 resultFileName.textContent = selectedFile.name.replace(/\.(pdf|docx)$/, '.pptx');
-                
+
                 // In a real app, this would be the actual file size
                 const fileSizeMB = (selectedFile.size / (1024 * 1024) * 0.8).toFixed(1);
                 resultFileSize.textContent = `Size: ${fileSizeMB} MB`;
-                
+
                 // In a real app, this would be the download URL from your backend
                 downloadBtn.href = '#'; // Mock URL
                 downloadBtn.download = selectedFile.name.replace(/\.(pdf|docx)$/, '.pptx');
-                
+
                 // For demonstration purposes only - in a real app, this would trigger an actual download
                 downloadBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     alert('In a real application, this would download your generated PowerPoint file.');
                 });
             }
-            
+
             function restartProcess() {
                 // Reset UI
                 resultSection.style.display = 'none';
                 uploadSection.style.display = 'block';
-                
+
                 // Clear file input and selection
                 fileInput.value = '';
                 fileList.innerHTML = '';
@@ -768,6 +773,228 @@
                 convertBtn.disabled = true;
             }
         });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Reference to the file input and other UI elements
+            const fileInput = document.getElementById('fileInput');
+            const uploadArea = document.getElementById('uploadArea');
+            const progressCard = document.getElementById('progressCard');
+            const resultCard = document.getElementById('resultCard');
+            const errorCard = document.getElementById('errorCard');
+            const processingFile = document.getElementById('processingFile');
+            const resultFileName = document.getElementById('resultFileName');
+            const errorMessage = document.getElementById('errorMessage');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const conversionProgress = document.getElementById('conversionProgress');
+
+            // Step indicators
+            const step1 = document.getElementById('step1').querySelector('i');
+            const step2 = document.getElementById('step2').querySelector('i');
+            const step3 = document.getElementById('step3').querySelector('i');
+
+            // Function to handle file selection
+            function handleFileSelect(input) {
+                if (input.files && input.files[0]) {
+                    const file = input.files[0];
+                    if (file.type !== 'application/pdf') {
+                        showError('Please select a valid PDF file.');
+                        return;
+                    }
+
+                    if (file.size > 50 * 1024 * 1024) { // 50MB limit
+                        showError('File size exceeds the 50MB limit.');
+                        return;
+                    }
+
+                    // Hide upload area and show progress
+                    uploadArea.style.display = 'none';
+                    progressCard.style.display = 'block';
+                    processingFile.textContent = file.name;
+
+                    // Create form data to send to the backend
+                    const formData = new FormData();
+                    formData.append('pdf_file', file);
+
+                    // Send the file to the backend
+                    convertPdfToPowerPoint(formData, file.name);
+                }
+            }
+
+            // Function to convert PDF to PowerPoint
+            function convertPdfToPowerPoint(formData, fileName) {
+                // Reset progress indicators
+                resetSteps();
+                conversionProgress.style.width = '0%';
+
+                // Make API call to the backend server
+                fetch('/api/convert-pdf-to-ppt', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.json().then(data => {
+                                throw new Error(data.error || 'Failed to convert PDF');
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Process successful conversion
+                        updateProgress('complete', fileName, data.pptx_url);
+                    })
+                    .catch(error => {
+                        showError(error.message || 'An unexpected error occurred');
+                    });
+
+                // Since the actual conversion might take time, we'll simulate the progress
+                // In a real implementation, you'd use WebSockets or polling to get real-time progress
+                simulateProgressUpdates();
+            }
+
+            // Function to simulate progress updates (replace with real progress updates in production)
+            function simulateProgressUpdates() {
+                // Step 1: Extracting text & images
+                setTimeout(() => {
+                    updateStepStatus(step1, 'complete');
+                    conversionProgress.style.width = '33%';
+
+                    // Step 2: AI analysis & slide creation
+                    setTimeout(() => {
+                        updateStepStatus(step2, 'complete');
+                        conversionProgress.style.width = '66%';
+
+                        // Step 3: Formatting & finalizing
+                        setTimeout(() => {
+                            updateStepStatus(step3, 'complete');
+                            conversionProgress.style.width = '100%';
+                        }, 3000);
+                    }, 4000);
+                }, 2000);
+            }
+
+            // Function to update step status
+            function updateStepStatus(stepElement, status) {
+                if (status === 'complete') {
+                    stepElement.classList.remove('step-pending');
+                    stepElement.classList.add('step-complete', 'fa-check');
+                } else {
+                    stepElement.classList.remove('step-complete', 'fa-check');
+                    stepElement.classList.add('step-pending');
+                }
+            }
+
+            // Function to update progress and show results
+            function updateProgress(status, fileName, downloadUrl) {
+                if (status === 'complete') {
+                    // Wait for the animation to complete
+                    setTimeout(() => {
+                        progressCard.style.display = 'none';
+                        resultCard.style.display = 'block';
+                        resultFileName.textContent = `${fileName} → ${fileName.replace('.pdf', '.pptx')}`;
+
+                        // Set the download link
+                        downloadBtn.href = downloadUrl;
+                        downloadBtn.download = fileName.replace('.pdf', '.pptx');
+
+                        // Add to recent conversions (in a real app, you'd fetch this from the server)
+                        addToRecentConversions(fileName, downloadUrl);
+                    }, 10000); // Wait for our simulated progress to complete
+                }
+            }
+
+            // Function to show error
+            function showError(message) {
+                uploadArea.style.display = 'none';
+                progressCard.style.display = 'none';
+                errorCard.style.display = 'block';
+                errorMessage.textContent = message;
+            }
+
+            // Function to reset steps
+            function resetSteps() {
+                updateStepStatus(step1, 'pending');
+                updateStepStatus(step2, 'pending');
+                updateStepStatus(step3, 'pending');
+            }
+
+            // Function to add to recent conversions
+            function addToRecentConversions(fileName, downloadUrl) {
+                const table = document.querySelector('.recent-files-table tbody');
+                const now = new Date();
+                const dateString = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+            <td>${fileName}</td>
+            <td>${dateString}</td>
+            <td><span class="status-indicator status-success"></span> Completed</td>
+            <td>
+                <a href="${downloadUrl}" download="${fileName.replace('.pdf', '.pptx')}" class="btn btn-sm btn-outline-primary"><i class="fas fa-download"></i></a>
+                <button class="btn btn-sm btn-outline-secondary" onclick="convertThisFileAgain('${fileName}')"><i class="fas fa-redo"></i></button>
+            </td>
+        `;
+
+                // Insert at the top
+                if (table.firstChild) {
+                    table.insertBefore(newRow, table.firstChild);
+                } else {
+                    table.appendChild(newRow);
+                }
+            }
+
+            // Function to convert a file again
+            window.convertThisFileAgain = function (fileName) {
+                // In a real app, you'd need to have the file stored or ask the user to upload it again
+                alert(`To convert ${fileName} again, please upload the file.`);
+                convertNewFile();
+            };
+
+            // Function to start a new conversion
+            window.convertNewFile = function () {
+                fileInput.value = '';
+                resultCard.style.display = 'none';
+                errorCard.style.display = 'none';
+                uploadArea.style.display = 'block';
+                resetSteps();
+            };
+
+            // Function to cancel conversion
+            window.cancelConversion = function () {
+                // In a real app, you'd need to cancel the backend process too
+                progressCard.style.display = 'none';
+                uploadArea.style.display = 'block';
+                resetSteps();
+            };
+
+            // Initialize event listeners
+            fileInput.addEventListener('change', function () {
+                handleFileSelect(this);
+            });
+
+            // Drag and drop functionality
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.style.borderColor = '#2575FC';
+                uploadArea.style.backgroundColor = '#f0f7ff';
+            });
+
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.style.borderColor = '#dee2e6';
+                uploadArea.style.backgroundColor = '#f8f9fa';
+            });
+
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.style.borderColor = '#dee2e6';
+                uploadArea.style.backgroundColor = '#f8f9fa';
+
+                if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                    fileInput.files = e.dataTransfer.files;
+                    handleFileSelect(fileInput);
+                }
+            });
+        });
     </script>
 </body>
+
 </html>

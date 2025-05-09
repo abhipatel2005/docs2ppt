@@ -1,0 +1,1139 @@
+[
+  {
+    "slide_index": 0,
+    "layout": "blank",
+    "shapes": [
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -5.16,
+          "y": 8.13,
+          "width": 10.31,
+          "height": 5.16
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -0.5,
+          "y": 11.31,
+          "width": 5.1,
+          "height": 2.55
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 16.37,
+          "y": -1.45,
+          "width": 10.31,
+          "height": 5.16
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.04,
+          "y": -2.34,
+          "width": 5.1,
+          "height": 2.55
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 15.38,
+          "y": 10.24,
+          "width": 4.06,
+          "height": 2.03
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 1.28,
+          "y": -0.9,
+          "width": 4.08,
+          "height": 2.04
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 3.31,
+          "y": 3.34,
+          "width": 13.37,
+          "height": 4.35
+        },
+        "text": "GROUP PROJECT",
+        "font": {
+          "name": "Bold Ink",
+          "size": 175.4,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 4.43,
+          "y": 7.48,
+          "width": 11.14,
+          "height": 1.06
+        },
+        "text": "Presented by Larana Group",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 50.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      }
+    ]
+  },
+  {
+    "slide_index": 1,
+    "layout": "blank",
+    "shapes": [
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -5.21,
+          "y": 8.51,
+          "width": 8.89,
+          "height": 4.45
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -1.19,
+          "y": 11.25,
+          "width": 4.4,
+          "height": 2.2
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.24,
+          "y": -1.68,
+          "width": 9.48,
+          "height": 4.74
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.86,
+          "y": -2.5,
+          "width": 4.68,
+          "height": 2.34
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 14.33,
+          "y": 10.69,
+          "width": 4.06,
+          "height": 2.03
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 1.76,
+          "y": -1.3,
+          "width": 4.08,
+          "height": 2.04
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 4.24,
+          "y": 2.93,
+          "width": 11.53,
+          "height": 1.38
+        },
+        "text": "TEAM PROJECT",
+        "font": {
+          "name": "Bold Ink",
+          "size": 105.51,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 8.81,
+          "y": 4.84,
+          "width": 3.4,
+          "height": 0.88
+        },
+        "text": "Aaron Loeb",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 42.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 7.79,
+          "y": 5.16,
+          "width": 0.82,
+          "height": 0.56
+        },
+        "text": "1",
+        "font": {
+          "name": "Bold Ink",
+          "size": 42.35,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 8.81,
+          "y": 5.83,
+          "width": 4.34,
+          "height": 0.88
+        },
+        "text": "Cahaya Dewi",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 42.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 7.79,
+          "y": 6.15,
+          "width": 0.82,
+          "height": 0.56
+        },
+        "text": "2",
+        "font": {
+          "name": "Bold Ink",
+          "size": 42.35,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 8.81,
+          "y": 6.82,
+          "width": 4.91,
+          "height": 0.88
+        },
+        "text": "Claudia Alves",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 42.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 7.79,
+          "y": 7.15,
+          "width": 0.82,
+          "height": 0.56
+        },
+        "text": "3",
+        "font": {
+          "name": "Bold Ink",
+          "size": 42.35,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 8.81,
+          "y": 7.82,
+          "width": 3.4,
+          "height": 0.88
+        },
+        "text": "Ketut Susilo",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 42.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 7.79,
+          "y": 8.14,
+          "width": 0.82,
+          "height": 0.56
+        },
+        "text": "4",
+        "font": {
+          "name": "Bold Ink",
+          "size": 42.35,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      }
+    ]
+  },
+  {
+    "slide_index": 2,
+    "layout": "blank",
+    "shapes": [
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -5.21,
+          "y": 8.51,
+          "width": 8.89,
+          "height": 4.45
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -1.19,
+          "y": 11.25,
+          "width": 4.4,
+          "height": 2.2
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.24,
+          "y": -1.68,
+          "width": 9.48,
+          "height": 4.74
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.86,
+          "y": -2.5,
+          "width": 4.68,
+          "height": 2.34
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 14.33,
+          "y": 10.69,
+          "width": 4.06,
+          "height": 2.03
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 1.76,
+          "y": -1.3,
+          "width": 4.08,
+          "height": 2.04
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 4.24,
+          "y": 3.12,
+          "width": 11.53,
+          "height": 1.38
+        },
+        "text": "INTRODUCTION",
+        "font": {
+          "name": "Bold Ink",
+          "size": 105.51,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 3.42,
+          "y": 4.7,
+          "width": 13.16,
+          "height": 3.81
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis enim pretium, bibendum ante ullamcorper, tincidunt augue. Nunc sed lorem aliquam, malesuada lectus eu, placerat lorem. Proin at aliquet sapien, vitae elementum mi.",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 38.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      }
+    ]
+  },
+  {
+    "slide_index": 3,
+    "layout": "blank",
+    "shapes": [
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -5.21,
+          "y": 8.51,
+          "width": 8.89,
+          "height": 4.45
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -1.19,
+          "y": 11.25,
+          "width": 4.4,
+          "height": 2.2
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.24,
+          "y": -1.68,
+          "width": 9.48,
+          "height": 4.74
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.86,
+          "y": -2.5,
+          "width": 4.68,
+          "height": 2.34
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 14.33,
+          "y": 10.69,
+          "width": 4.06,
+          "height": 2.03
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 1.76,
+          "y": -1.3,
+          "width": 4.08,
+          "height": 2.04
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 4.24,
+          "y": 3.12,
+          "width": 11.53,
+          "height": 1.38
+        },
+        "text": "BACKGROUND",
+        "font": {
+          "name": "Bold Ink",
+          "size": 105.51,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 3.42,
+          "y": 4.7,
+          "width": 13.16,
+          "height": 3.81
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis enim pretium, bibendum ante ullamcorper, tincidunt augue. Nunc sed lorem aliquam, malesuada lectus eu, placerat lorem. Proin at aliquet sapien, vitae elementum mi.",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 38.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      }
+    ]
+  },
+  {
+    "slide_index": 4,
+    "layout": "blank",
+    "shapes": [
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -5.21,
+          "y": 8.51,
+          "width": 8.89,
+          "height": 4.45
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -1.19,
+          "y": 11.25,
+          "width": 4.4,
+          "height": 2.2
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.24,
+          "y": -1.68,
+          "width": 9.48,
+          "height": 4.74
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.86,
+          "y": -2.5,
+          "width": 4.68,
+          "height": 2.34
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 14.33,
+          "y": 10.69,
+          "width": 4.06,
+          "height": 2.03
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 1.76,
+          "y": -1.3,
+          "width": 4.08,
+          "height": 2.04
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 4.24,
+          "y": 2.31,
+          "width": 11.53,
+          "height": 1.38
+        },
+        "text": "PROJECT",
+        "font": {
+          "name": "Bold Ink",
+          "size": 105.51,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 3.27,
+          "y": 3.96,
+          "width": 6.0,
+          "height": 6.06
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis enim pretium, bibendum ante ullamcorper, tincidunt augue.",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 38.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 10.73,
+          "y": 4.01,
+          "width": 6.0,
+          "height": 6.06
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis enim pretium, bibendum ante ullamcorper, tincidunt augue.",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 38.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      }
+    ]
+  },
+  {
+    "slide_index": 5,
+    "layout": "blank",
+    "shapes": [
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -5.21,
+          "y": 8.51,
+          "width": 8.89,
+          "height": 4.45
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -1.19,
+          "y": 11.25,
+          "width": 4.4,
+          "height": 2.2
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.24,
+          "y": -1.68,
+          "width": 9.48,
+          "height": 4.74
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.86,
+          "y": -2.5,
+          "width": 4.68,
+          "height": 2.34
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 14.33,
+          "y": 10.69,
+          "width": 4.06,
+          "height": 2.03
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 1.76,
+          "y": -1.3,
+          "width": 4.08,
+          "height": 2.04
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 4.24,
+          "y": 1.5,
+          "width": 11.53,
+          "height": 2.62
+        },
+        "text": "PROJECT OVERVIEW",
+        "font": {
+          "name": "Bold Ink",
+          "size": 105.51,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 3.63,
+          "y": 4.8,
+          "width": 6.0,
+          "height": 2.31
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 38.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 10.37,
+          "y": 4.8,
+          "width": 6.0,
+          "height": 2.31
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 38.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 3.63,
+          "y": 7.45,
+          "width": 6.0,
+          "height": 2.31
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 38.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 10.37,
+          "y": 7.45,
+          "width": 6.0,
+          "height": 2.31
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 38.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      }
+    ]
+  },
+  {
+    "slide_index": 6,
+    "layout": "blank",
+    "shapes": [
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -5.21,
+          "y": 8.51,
+          "width": 8.89,
+          "height": 4.45
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -1.19,
+          "y": 11.25,
+          "width": 4.4,
+          "height": 2.2
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.24,
+          "y": -1.68,
+          "width": 9.48,
+          "height": 4.74
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.86,
+          "y": -2.5,
+          "width": 4.68,
+          "height": 2.34
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 14.33,
+          "y": 10.69,
+          "width": 4.06,
+          "height": 2.03
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 1.76,
+          "y": -1.3,
+          "width": 4.08,
+          "height": 2.04
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 4.24,
+          "y": 2.31,
+          "width": 11.53,
+          "height": 1.38
+        },
+        "text": "PROCESS",
+        "font": {
+          "name": "Bold Ink",
+          "size": 105.51,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 3.27,
+          "y": 3.96,
+          "width": 6.0,
+          "height": 6.06
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis enim pretium, bibendum ante ullamcorper, tincidunt augue.",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 38.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 10.73,
+          "y": 4.01,
+          "width": 6.0,
+          "height": 6.06
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis enim pretium, bibendum ante ullamcorper, tincidunt augue.",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 38.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      }
+    ]
+  },
+  {
+    "slide_index": 7,
+    "layout": "blank",
+    "shapes": [
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -5.21,
+          "y": 8.51,
+          "width": 8.89,
+          "height": 4.45
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -1.19,
+          "y": 11.25,
+          "width": 4.4,
+          "height": 2.2
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.24,
+          "y": -1.68,
+          "width": 9.48,
+          "height": 4.74
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.86,
+          "y": -2.5,
+          "width": 4.68,
+          "height": 2.34
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 14.33,
+          "y": 10.69,
+          "width": 4.06,
+          "height": 2.03
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 1.76,
+          "y": -1.3,
+          "width": 4.08,
+          "height": 2.04
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 4.16,
+          "y": 3.06,
+          "width": 11.53,
+          "height": 1.38
+        },
+        "text": "RESULT",
+        "font": {
+          "name": "Bold Ink",
+          "size": 105.51,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 3.19,
+          "y": 4.71,
+          "width": 7.8,
+          "height": 3.81
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis enim pretium, bibendum ante ullamcorper, tincidunt augue.",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 38.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "image",
+        "position": {
+          "x": 10.54,
+          "y": 4.15,
+          "width": 6.84,
+          "height": 4.98
+        },
+        "image_path": "image.png"
+      }
+    ]
+  },
+  {
+    "slide_index": 8,
+    "layout": "blank",
+    "shapes": [
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -5.21,
+          "y": 8.51,
+          "width": 8.89,
+          "height": 4.45
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -1.19,
+          "y": 11.25,
+          "width": 4.4,
+          "height": 2.2
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.24,
+          "y": -1.68,
+          "width": 9.48,
+          "height": 4.74
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.86,
+          "y": -2.5,
+          "width": 4.68,
+          "height": 2.34
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 14.33,
+          "y": 10.69,
+          "width": 4.06,
+          "height": 2.03
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 1.76,
+          "y": -1.3,
+          "width": 4.08,
+          "height": 2.04
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 4.24,
+          "y": 3.12,
+          "width": 11.53,
+          "height": 1.38
+        },
+        "text": "CONCLUSION",
+        "font": {
+          "name": "Bold Ink",
+          "size": 105.51,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 3.42,
+          "y": 4.7,
+          "width": 13.16,
+          "height": 3.81
+        },
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis enim pretium, bibendum ante ullamcorper, tincidunt augue. Nunc sed lorem aliquam, malesuada lectus eu, placerat lorem. Proin at aliquet sapien, vitae elementum mi.",
+        "font": {
+          "name": "Akzidenz-Grotesk",
+          "size": 38.82,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      }
+    ]
+  },
+  {
+    "slide_index": 9,
+    "layout": "blank",
+    "shapes": [
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -5.21,
+          "y": 8.51,
+          "width": 8.89,
+          "height": 4.45
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": -1.19,
+          "y": 11.25,
+          "width": 4.4,
+          "height": 2.2
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.24,
+          "y": -1.68,
+          "width": 9.48,
+          "height": 4.74
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 17.86,
+          "y": -2.5,
+          "width": 4.68,
+          "height": 2.34
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 14.33,
+          "y": 10.69,
+          "width": 4.06,
+          "height": 2.03
+        }
+      },
+      {
+        "type": "GROUP",
+        "position": {
+          "x": 1.76,
+          "y": -1.3,
+          "width": 4.08,
+          "height": 2.04
+        }
+      },
+      {
+        "type": "textbox",
+        "position": {
+          "x": 3.31,
+          "y": 3.76,
+          "width": 13.37,
+          "height": 4.35
+        },
+        "text": "THANK\nYOU",
+        "font": {
+          "name": "Bold Ink",
+          "size": 175.4,
+          "bold": null,
+          "italic": null,
+          "color": "0B1320"
+        }
+      }
+    ]
+  }
+]

@@ -346,5 +346,5 @@ def convert_pdf_to_slide_json(pdf_path, output_json_path="slides.json"):
     print("✅ Done.")
 
 # === USAGE ===
-pdf_path = "testing_uploads/revised_guidelines_css_pt.pdf"
+pdf_path = "C:\\Users\\patel\\Desktop\\01_narayani reports.pdf"
 convert_pdf_to_slide_json(pdf_path)
