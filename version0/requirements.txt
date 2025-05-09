@@ -1,6 +1,6 @@
 python-pptx
 dotenv
-google.generative-ai
+google.generativeai
 pdfplumber
 pdfminer
 uuid
