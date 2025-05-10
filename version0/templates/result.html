@@ -3,31 +3,317 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Download Your Presentation</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to PowerPoint Converter - Download</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --danger: #f72585;
+            --warning: #f8961e;
+            --gray: #adb5bd;
+            --light-gray: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            text-align: center;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 10px auto 0;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .result-section {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .result-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-indicator {
+            margin: 0 auto 25px;
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 2;
+            stroke: var(--success);
+            stroke-miterlimit: 10;
+            box-shadow: 0 0 15px rgba(76, 201, 240, 0.3);
+            animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+        }
+
+        .checkmark-circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: var(--success);
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+
+        .checkmark-check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            stroke: var(--success);
+            stroke-width: 3;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+        }
+
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes scale {
+
+            0%,
+            100% {
+                transform: none;
+            }
+
+            50% {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+
+        @keyframes fill {
+            100% {
+                box-shadow: 0 0 0 2px rgba(76, 201, 240, 0.1);
+            }
+        }
+
+        .result-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+
+        .file-details {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: var(--light);
+            border-radius: 15px;
+        }
+
+        .file-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-right: 20px;
+        }
+
+        .file-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .file-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: rgba(76, 201, 240, 0.1);
+            color: var(--success);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-lg {
+            padding: 14px 28px;
+            font-size: 1.1rem;
+        }
+
+        .download-btn {
+            background-color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .download-btn:hover {
+            background-color: var(--secondary);
+        }
+
+        .restart-btn {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        .restart-btn:hover {
+            background-color: var(--light-gray);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .file-details {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .file-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .btn-lg {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-light">
-    <div class="container py-5">
-        <div class="text-center mb-4">
-            <h2 class="fw-bold text-success">✅ Your Presentation is Ready!</h2>
-            <p class="text-muted">Click below to download your .pptx file</p>
+<body>
+    <header>
+        <div class="container">
+            <h1>PDF to PowerPoint Converter</h1>
+            <p>Transform your PDF documents into professional PowerPoint presentations with just a few clicks</p>
         </div>
+    </header>
 
-        <div class="text-center">
-            <a class="btn btn-lg btn-outline-success"
-                href="{{ url_for('download_file', session_id=session_id, filename=filename) }}">
-                ⬇️ Download {{ filename }}
-            </a>
-        </div>
-        <br>
+    <div class="container">
+        <div class="main-content">
+            <!-- Result Section -->
+            <section class="result-section">
+                <div class="success-indicator">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+                        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                    </svg>
+                </div>
 
-        <div class="text-center">
-            <a class="btn btn-lg btn-outline-dark" href="/">
-                Convert another PDF
-            </a>
+                <h2>Ready to Download!</h2>
+                <p class="result-subtitle">Your PDF has been successfully converted to PowerPoint</p>
+
+                <div class="file-details">
+                    <div class="file-icon">
+                        <i class="fa-solid fa-file-powerpoint"></i>
+                    </div>
+                    <div class="file-info" style="display: flex; align-items: center;gap:20px">
+                        <h4>{{ filename }}</h4>
+                        <p><span class="status-badge">Ready</span></p>
+                    </div>
+                </div>
+
+                <a href="{{ url_for('download_file', session_id=session_id, filename=filename) }}"
+                    class="btn btn-lg download-btn">
+                    <i class="fa-solid fa-download"></i> Download Presentation
+                </a>
+
+                <a href="/" class="btn restart-btn">
+                    <i class="fa-solid fa-arrow-rotate-left"></i> Convert Another Document
+                </a>
+            </section>
         </div>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 PDF to PowerPoint Converter. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
