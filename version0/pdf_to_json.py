@@ -203,7 +203,6 @@ def generate_slide_data(content_blocks):
           Here is the source:
           \"\"\"{sections_text}\"\"\"
         """
-        prompt = prompt.replace("\n", " ")
         print(f"🔹 Processing chunk {idx + 1}/{len(chunks)}...")
         response = safe_generate_response(prompt)
         slides = convert_gemini_response_to_list(response)
