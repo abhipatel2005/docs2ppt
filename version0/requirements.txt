@@ -6,5 +6,5 @@ pdfminer
 uuid
 flask
 fitz
-PyMuPDF
+PyMuPDF==1.22.3
 panda
