@@ -6,4 +6,4 @@ pdfminer
 uuid
 flask
 PyMuPDF==1.22.3
-panda
+pandas
