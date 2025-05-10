@@ -3,3 +3,5 @@ venv310
 __pycache__
 pdf_images
 *.pptx
+output/
+uploads/

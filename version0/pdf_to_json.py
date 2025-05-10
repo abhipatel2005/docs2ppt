@@ -116,93 +116,96 @@ def generate_slide_data(content_blocks):
             for i, block in enumerate(chunk)
         ])
 
-        prompt = f"""
-          You are a presentation expert.
+        prompt_template = """
+        You are a presentation expert.
 
-          Convert the following document into a Microsoft PowerPoint presentation using various layouts based on content type.
+        Convert the following document into a Microsoft PowerPoint presentation using various layouts based on content type.
 
-          Supported layouts:
-          - Title Only
-          - Title Slide
-          - Section Header
-          - Title and Content
-          - Two Content
-          - Comparison
-          - Content/Image with Caption
-          - Title with Table
+        Supported layouts:
+        - Title Only
+        - Title Slide
+        - Section Header
+        - Title and Content
+        - Two Content
+        - Comparison
+        - Content/Image with Caption
+        - Title with Table
 
-          Return a JSON list of slides like this:
-          {
-            {
-              "layout": "title_only",
-              "title": "max 60 characters"
-            },
-            {
-              "layout": "title_slide",
-              "title": "max 60 char",
-              "sub-heading": "sub-heading(max 250 characters)"
-            },
-            {
-              "layout": "title_and_content",
-              "title": "title(max 65 characters)",
-              "content": "approax 1250 character, add \n for new line"
-            },
-            {
-              "layout": "two_content",
-              "title": "max 65 characters",
-              "content": "450 to 460 max character, add \n for new line"
-            },
-            {
-              "layout": "section_header",
-              "title": "max 60 characters",
-              "sub_heading": "270 character, add \n for new line"
-            },
-            {
-              "layout": "comparison",
-              "title": "max 60 characters",
-              "left_content": {
-                "title": "max 36 characters",
-                "content": "max 360 characters, add \n for new line"
-              },
-              "right_layout": {
-                "title": "max 36 characters",
-                "content": "max 360 characters, add \n for new line"
-              }
-            },
-            {
-              "layout": "content_with_caption",
-              "content": {
-                "title": "max 60 chracters if the sentence exceed 30 character enter new line",
-                "content": "max 630 characters if sentence exceed 45 charcters use new line"
-              },
-              "chart/smart3D_icon": "properties of this thing goes here"
-            },
-            {
-              "layout": "image_with_caption",
-              "image_path": "image_path_goes_here",
-              "title": "max 60 chracters",
-              "content": "max 250 characters, add \n for new line"
-            },
-            {
-              "layout": "title_with_table",
-              "title": "Budget Status",
-              "table": {
-                "headers": ["Category", "Budgeted Amount", "Actual Spend", "Variance"],
-                "rows": [
-                  ["Hardware", "$150,000", "$140,000", "$10,000"],
-                  ["Software", "$100,000", "$95,000", "$5,000"],
-                  ["Labor", "$200,000", "$210,000", "-$10,000"],
-                  ["Training", "$50,000", "$45,000", "$5,000"]
-                ]
-              }
-            }
-          }
+        Return a JSON list of slides like this:
+        [
+          {{
+            "layout": "title_only",
+            "title": "max 60 characters"
+          }},
+          {{
+            "layout": "title_slide",
+            "title": "max 60 char",
+            "sub-heading": "sub-heading(max 250 characters)"
+          }},
+          {{
+            "layout": "title_and_content",
+            "title": "title(max 65 characters)",
+            "content": "approax 1250 character, add \\n for new line"
+          }},
+          {{
+            "layout": "two_content",
+            "title": "max 65 characters",
+            "content": "450 to 460 max character, add \\n for new line"
+          }},
+          {{
+            "layout": "section_header",
+            "title": "max 60 characters",
+            "sub_heading": "270 character, add \\n for new line"
+          }},
+          {{
+            "layout": "comparison",
+            "title": "max 60 characters",
+            "left_content": {{
+              "title": "max 36 characters",
+              "content": "max 360 characters, add \\n for new line"
+            }},
+            "right_layout": {{
+              "title": "max 36 characters",
+              "content": "max 360 characters, add \\n for new line"
+            }}
+          }},
+          {{
+            "layout": "content_with_caption",
+            "content": {{
+              "title": "max 60 chracters if the sentence exceed 30 character enter new line",
+              "content": "max 630 characters if sentence exceed 45 charcters use new line"
+            }},
+            "chart/smart3D_icon": "properties of this thing goes here"
+          }},
+          {{
+            "layout": "image_with_caption",
+            "image_path": "image_path_goes_here",
+            "title": "max 60 chracters",
+            "content": "max 250 characters, add \\n for new line"
+          }},
+          {{
+            "layout": "title_with_table",
+            "title": "Budget Status",
+            "table": {{
+              "headers": ["Category", "Budgeted Amount", "Actual Spend", "Variance"],
+              "rows": [
+                ["Hardware", "$150,000", "$140,000", "$10,000"],
+                ["Software", "$100,000", "$95,000", "$5,000"],
+                ["Labor", "$200,000", "$210,000", "-$10,000"],
+                ["Training", "$50,000", "$45,000", "$5,000"]
+              ]
+            }}
+          }}
+        ]
 
-          Only include image_path if it was explicitly mentioned as [IMAGE_PATH: ...] in the source.
+        Only include image_path if it was explicitly mentioned as [IMAGE_PATH: ...] in the source.
 
-          Here is the source:
-          \"\"\"{sections_text}\"\"\"
-        """
+        Here is the source:
+        \"\"\"{content}\"\"\"
+"""
+
+        prompt = prompt_template.format(content=sections_text.replace("{", "{{").replace("}", "}}"))
+        prompt = prompt.replace("\n", " ")
         print(f"🔹 Processing chunk {idx + 1}/{len(chunks)}...")
         response = safe_generate_response(prompt)
         slides = convert_gemini_response_to_list(response)
