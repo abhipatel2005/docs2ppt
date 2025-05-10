@@ -188,11 +188,13 @@ def background_cleanup_loop():
         cleanup_old_files_and_folders(BASE_OUTPUT_FOLDER, EXPIRATION_MINUTES)
         time.sleep(300)  # every 5 minutes
 
-@app.before_first_request
+@app.before_request
 def start_background_cleanup():
-    thread = threading.Thread(target=background_cleanup_loop)
-    thread.daemon = True
-    thread.start()
+    if not hasattr(start_background_cleanup, "thread"):
+        thread = threading.Thread(target=background_cleanup_loop)
+        thread.daemon = True
+        thread.start()
+        start_background_cleanup.thread = thread
 
 # --- ROUTES ---
 @app.route("/", methods=["GET"])

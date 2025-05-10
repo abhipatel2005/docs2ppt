@@ -291,18 +291,18 @@
                     <div class="file-icon">
                         <i class="fa-solid fa-file-powerpoint"></i>
                     </div>
-                    <div class="file-info" style="display: flex; align-items: center;gap:20px">
+                    <div class="file-info" style="display: flex; align-items: center; gap:20px">
                         <h4>{{ filename }}</h4>
                         <p><span class="status-badge">Ready</span></p>
                     </div>
                 </div>
 
                 <a href="{{ url_for('download_file', session_id=session_id, filename=filename) }}"
-                    class="btn btn-lg download-btn">
+                    class="btn btn-lg download-btn" style="margin-right: 10px;">
                     <i class="fa-solid fa-download"></i> Download Presentation
                 </a>
 
-                <a href="/" class="btn restart-btn">
+                <a href="/" class="btn btn-lg restart-btn">
                     <i class="fa-solid fa-arrow-rotate-left"></i> Convert Another Document
                 </a>
             </section>
