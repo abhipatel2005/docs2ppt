@@ -5,6 +5,6 @@ pdfplumber
 pdfminer
 uuid
 flask
-fitz
 PyMuPDF==1.22.3
 panda
+fontend
