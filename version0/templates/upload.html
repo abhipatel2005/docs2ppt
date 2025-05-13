@@ -164,25 +164,25 @@
         }
 
         .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
             width: 40px;
             height: 40px;
-            border-radius: 50%;
-            border-left-color: var(--primary);
-            animation: spin 1s linear infinite;
             margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            border-left-color: rgba(0, 0, 0, 0.1);
+            animation: spin 1s linear infinite;
         }
 
-        .progress-container {
+        /* .progress-container {
             width: 100%;
             background-color: var(--light-gray);
             border-radius: 10px;
             margin: 20px 0;
             overflow: hidden;
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+        } */
 
-        .progress-bar {
+        /* .progress-bar {
             height: 10px;
             background: linear-gradient(to right, var(--primary), var(--success));
             width: 0%;
@@ -190,9 +190,9 @@
             transition: width 0.5s ease;
             position: relative;
             animation: progress-glow 1.5s ease-in-out infinite;
-        }
+        } */
 
-        @keyframes progress-glow {
+        /* @keyframes progress-glow {
             0% {
                 box-shadow: 0 0 5px var(--primary);
             }
@@ -204,15 +204,15 @@
             100% {
                 box-shadow: 0 0 5px var(--primary);
             }
-        }
+        } */
 
-        .status-text {
+        /* .status-text {
             font-size: 1rem;
             color: var(--dark);
             margin: 10px 0;
             font-weight: 500;
             transition: all 0.3s ease;
-        }
+        } */
 
         .fun-facts-section {
             margin-top: 40px;
@@ -283,14 +283,14 @@
             color: var(--dark);
         }
 
-        .percentage-text {
+        /* .percentage-text {
             font-size: 0.9rem;
             color: var(--dark);
             position: absolute;
             right: 10px;
             top: -25px;
             font-weight: 600;
-        }
+        } */
 
         .error-message {
             color: var(--danger);
@@ -372,8 +372,10 @@
                         <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
                         <h3>Drag & Drop your file here</h3>
                         <p>or</p>
-                        <input type="file" id="fileInput" class="file-input" name="pdf" accept=".pdf" required>
+                        <input type="file" id="fileInput" class="file-input" name="file" accept=".pdf,.docx,.doc"
+                            required>
                         <button type="button" class="btn" id="browseBtn">Browse Files</button>
+                        <p style="margin-top: 15px;">(Please select file under 10MB)</p>
                     </div>
 
                     <button type="submit" class="btn btn-lg btn-block" id="convertBtn" disabled>Convert to
@@ -382,21 +384,21 @@
 
                 <div class="loader-container" id="loader">
                     <div class="spinner"></div>
-                    <h3>Processing your file...</h3>
+                    <h3>Processing your file..., It make take a while.</h3>
 
                     <div class="file-details" id="fileDetails"
-                        style="display: flex; gap:20px; align-items: center; justify-content: center;">
+                        style="display: flex; gap:20px; align-items: center; justify-content: center; flex-wrap: wrap;">
                         <p><span class="file-name" id="processingFileName">file.pdf</span></p>
                         <p id="fileSize">Size: Calculating...</p>
                         <p id="pageCount">Pages: Analyzing...</p>
                     </div>
 
-                    <div class="progress-container">
+                    <!-- <div class="progress-container">
                         <div class="percentage-text" id="percentageText">0%</div>
                         <div class="progress-bar" id="progressBar"></div>
-                    </div>
+                    </div> -->
 
-                    <div class="status-text" id="statusText">Initializing...</div>
+                    <!-- <div class="status-text" id="statusText">Initializing...</div> -->
 
                     <div class="fun-facts-section">
                         <h4>Did you know?</h4>
@@ -462,30 +464,106 @@
             });
 
             // Validate the file when selected
-            fileInput.addEventListener('change', function () {
-                if (fileInput.files.length > 0) {
-                    const file = fileInput.files[0];
+            // fileInput.addEventListener('change', function () {
+            //     if (fileInput.files.length > 0) {
+            //         const file = fileInput.files[0];
 
-                    if (file.type === 'application/pdf') {
-                        // Valid PDF file
-                        document.querySelector('.upload-area h3').textContent = file.name;
-                        convertBtn.disabled = false;
-                        errorMessage.style.display = 'none';
+            //         if (file.type === 'application/pdf') {
+            //             // Valid PDF file
+            //             document.querySelector('.upload-area h3').textContent = file.name;
+            //             convertBtn.disabled = false;
+            //             errorMessage.style.display = 'none';
+            //         } else {
+            //             // Not a PDF file
+            //             document.querySelector('.upload-area h3').textContent = "Invalid file type";
+            //             errorText.textContent = "Please select a PDF file only (.pdf)";
+            //             errorMessage.style.display = 'block';
+            //             convertBtn.disabled = true;
+            //         }
+            //     } else {
+            //         // No file selected
+            //         document.querySelector('.upload-area h3').textContent = "Drag & Drop your file here";
+            //         convertBtn.disabled = true;
+            //     }
+            // });
+
+            // // Handle drag and drop
+            // ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            //     dropArea.addEventListener(eventName, preventDefaults, false);
+            // });
+
+            // function preventDefaults(e) {
+            //     e.preventDefault();
+            //     e.stopPropagation();
+            // }
+
+            // ['dragenter', 'dragover'].forEach(eventName => {
+            //     dropArea.addEventListener(eventName, function () {
+            //         dropArea.classList.add('active');
+            //     }, false);
+            // });
+
+            // ['dragleave', 'drop'].forEach(eventName => {
+            //     dropArea.addEventListener(eventName, function () {
+            //         dropArea.classList.remove('active');
+            //     }, false);
+            // });
+
+            // dropArea.addEventListener('drop', function (e) {
+            //     const dt = e.dataTransfer;
+            //     const files = dt.files;
+
+            //     if (files.length > 0) {
+            //         if (files[0].type === 'application/pdf') {
+            //             // Valid PDF file
+            //             fileInput.files = files;
+            //             document.querySelector('.upload-area h3').textContent = files[0].name;
+            //             convertBtn.disabled = false;
+            //             errorMessage.style.display = 'none';
+            //         } else {
+            //             // Not a PDF file
+            //             document.querySelector('.upload-area h3').textContent = "Invalid file type";
+            //             errorText.textContent = "Please select a PDF file only (.pdf)";
+            //             errorMessage.style.display = 'block';
+            //             convertBtn.disabled = true;
+            //         }
+            //     }
+            // }, false);
+            fileInput.addEventListener('change', function () {
+                if (fileInput.files[0].size > 10485760) {
+                    // document.querySelector('.upload-area h3').textContent = "Invalid file type";
+                    errorText.textContent = "Please select a file under 10MB";
+                    errorMessage.style.display = 'block';
+                    convertBtn.disabled = true;
+                } else {
+
+                    if (fileInput.files.length > 0) {
+                        const file = fileInput.files[0];
+                        const allowedTypes = ['application/pdf',
+                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                            'application/msword'];
+
+                        if (allowedTypes.includes(file.type)) {
+                            // Valid file
+                            document.querySelector('.upload-area h3').textContent = file.name;
+                            convertBtn.disabled = false;
+                            errorMessage.style.display = 'none';
+                        } else {
+                            // Invalid file
+                            document.querySelector('.upload-area h3').textContent = "Invalid file type";
+                            errorText.textContent = "Please select a PDF or Word file (.pdf, .docx, .doc)";
+                            errorMessage.style.display = 'block';
+                            convertBtn.disabled = true;
+                        }
                     } else {
-                        // Not a PDF file
-                        document.querySelector('.upload-area h3').textContent = "Invalid file type";
-                        errorText.textContent = "Please select a PDF file only (.pdf)";
-                        errorMessage.style.display = 'block';
+                        // No file selected
+                        document.querySelector('.upload-area h3').textContent = "Drag & Drop your file here";
                         convertBtn.disabled = true;
                     }
-                } else {
-                    // No file selected
-                    document.querySelector('.upload-area h3').textContent = "Drag & Drop your file here";
-                    convertBtn.disabled = true;
                 }
             });
 
-            // Handle drag and drop
+            // Drag & Drop events
             ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
                 dropArea.addEventListener(eventName, preventDefaults, false);
             });
@@ -512,36 +590,66 @@
                 const files = dt.files;
 
                 if (files.length > 0) {
-                    if (files[0].type === 'application/pdf') {
-                        // Valid PDF file
+                    const file = files[0];
+                    const allowedTypes = ['application/pdf',
+                        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                        'application/msword'];
+
+                    if (allowedTypes.includes(file.type)) {
+                        // Valid file
                         fileInput.files = files;
-                        document.querySelector('.upload-area h3').textContent = files[0].name;
+                        document.querySelector('.upload-area h3').textContent = file.name;
                         convertBtn.disabled = false;
                         errorMessage.style.display = 'none';
                     } else {
-                        // Not a PDF file
+                        // Invalid file
                         document.querySelector('.upload-area h3').textContent = "Invalid file type";
-                        errorText.textContent = "Please select a PDF file only (.pdf)";
+                        errorText.textContent = "Please select a PDF or Word file (.pdf, .docx, .doc)";
                         errorMessage.style.display = 'block';
                         convertBtn.disabled = true;
                     }
                 }
+                if (this.files[0].size > 10485760) {
+                    alert("The file size should be less than 10MB");
+                }
             }, false);
+
 
             // Form submission validation
             form.addEventListener('submit', function (e) {
+                // if (fileInput.files.length === 0) {
+                //     // No file selected
+                //     e.preventDefault();
+                //     errorText.textContent = "Please select a PDF file before converting";
+                //     errorMessage.style.display = 'block';
+                //     return false;
+                // }
+
+                // if (fileInput.files[0].type !== 'application/pdf') {
+                //     // Not a PDF file
+                //     e.preventDefault();
+                //     errorText.textContent = "Please select a PDF file only (.pdf)";
+                //     errorMessage.style.display = 'block';
+                //     return false;
+                // }
                 if (fileInput.files.length === 0) {
                     // No file selected
                     e.preventDefault();
-                    errorText.textContent = "Please select a PDF file before converting";
+                    errorText.textContent = "Please select a file before converting";
                     errorMessage.style.display = 'block';
                     return false;
                 }
 
-                if (fileInput.files[0].type !== 'application/pdf') {
-                    // Not a PDF file
+                const allowedTypes = [
+                    'application/pdf',
+                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                    'application/msword'
+                ];
+
+                if (!allowedTypes.includes(fileInput.files[0].type)) {
+                    // Invalid file type
                     e.preventDefault();
-                    errorText.textContent = "Please select a PDF file only (.pdf)";
+                    errorText.textContent = "Please select a valid file: PDF or Word (.pdf, .docx, .doc)";
                     errorMessage.style.display = 'block';
                     return false;
                 }
@@ -562,7 +670,7 @@
                 }, 1500);
 
                 // Start the real-time processing simulation
-                startRealTimeProcessing(file);
+                // startRealTimeProcessing(file);
 
                 // Start the fun facts carousel
                 startFunFactsCarousel();
@@ -576,77 +684,77 @@
             }
 
             // Function to simulate real-time processing with actual task tracking
-            function startRealTimeProcessing(file) {
-                const progressBar = document.getElementById('progressBar');
-                const statusText = document.getElementById('statusText');
-                const percentageText = document.getElementById('percentageText');
+            // function startRealTimeProcessing(file) {
+            //     const progressBar = document.getElementById('progressBar');
+            //     const statusText = document.getElementById('statusText');
+            //     const percentageText = document.getElementById('percentageText');
 
-                // Processing tasks with expected duration percentages
-                const processingTasks = [
-                    { name: "Initializing...", duration: 5 },
-                    { name: "Analyzing PDF structure...", duration: 15 },
-                    { name: "Extracting text content...", duration: 20 },
-                    { name: "Processing images...", duration: 20 },
-                    { name: "Analyzing layout and formatting...", duration: 10 },
-                    { name: "Identifying headings and sections...", duration: 5 },
-                    { name: "Creating slide templates...", duration: 5 },
-                    { name: "Applying style and formatting...", duration: 10 },
-                    { name: "Generating slide transitions...", duration: 5 },
-                    { name: "Finalizing presentation...", duration: 5 }
-                ];
+            //     // Processing tasks with expected duration percentages
+            //     const processingTasks = [
+            //         { name: "Initializing...", duration: 5 },
+            //         { name: "Analyzing PDF structure...", duration: 15 },
+            //         { name: "Extracting text content...", duration: 20 },
+            //         { name: "Processing images...", duration: 20 },
+            //         { name: "Analyzing layout and formatting...", duration: 10 },
+            //         { name: "Identifying headings and sections...", duration: 5 },
+            //         { name: "Creating slide templates...", duration: 5 },
+            //         { name: "Applying style and formatting...", duration: 10 },
+            //         { name: "Generating slide transitions...", duration: 5 },
+            //         { name: "Finalizing presentation...", duration: 5 }
+            //     ];
 
-                let currentTask = 0;
-                let currentProgress = 0;
-                let targetProgress = 0;
+            //     let currentTask = 0;
+            //     let currentProgress = 0;
+            //     let targetProgress = 0;
 
-                // Update status to first task
-                statusText.textContent = processingTasks[0].name;
+            //     // Update status to first task
+            //     statusText.textContent = processingTasks[0].name;
 
-                // Calculate file size factor (larger files take longer)
-                const sizeFactor = Math.min(1 + (file.size / 10000000), 3);
+            //     // Calculate file size factor (larger files take longer)
+            //     const sizeFactor = Math.min(1 + (file.size / 10000000), 3);
 
-                // Start the processing simulation
-                const processInterval = setInterval(() => {
-                    // Move to next task when current task is complete
-                    if (currentProgress >= targetProgress) {
-                        currentTask++;
+            //     // Start the processing simulation
+            //     const processInterval = setInterval(() => {
+            //         // Move to next task when current task is complete
+            //         if (currentProgress >= targetProgress) {
+            //             currentTask++;
 
-                        // If all tasks are complete
-                        if (currentTask >= processingTasks.length) {
-                            clearInterval(processInterval);
-                            statusText.textContent = "Presentation ready!";
-                            progressBar.style.width = "100%";
-                            percentageText.textContent = "100%";
+            //             // If all tasks are complete
+            //             if (currentTask >= processingTasks.length) {
+            //                 clearInterval(processInterval);
+            //                 statusText.textContent = "Presentation ready!";
+            //                 progressBar.style.width = "100%";
+            //                 percentageText.textContent = "100%";
 
-                            // Here you would normally handle the redirect to the download page
-                            // For simulation purposes, we'll just show a success message
-                            setTimeout(() => {
-                                statusText.textContent = "Redirecting to download page...";
-                            }, 1500);
+            //                 // Here you would normally handle the redirect to the download page
+            //                 // For simulation purposes, we'll just show a success message
+            //                 setTimeout(() => {
+            //                     statusText.textContent = "Redirecting to download page...";
+            //                 }, 1500);
 
-                            return;
-                        }
+            //                 return;
+            //             }
 
-                        // Update to next task
-                        statusText.textContent = processingTasks[currentTask].name;
+            //             // Update to next task
+            //             statusText.textContent = processingTasks[currentTask].name;
 
-                        // Calculate progress target for next task
-                        targetProgress = 0;
-                        for (let i = 0; i <= currentTask; i++) {
-                            targetProgress += processingTasks[i].duration;
-                        }
-                    }
+            //             // Calculate progress target for next task
+            //             targetProgress = 0;
+            //             for (let i = 0; i <= currentTask; i++) {
+            //                 targetProgress += processingTasks[i].duration;
+            //             }
+            //         }
 
-                    // Gradually increase progress toward target
-                    currentProgress += 0.4 * Math.random() * sizeFactor;
-                    currentProgress = Math.min(currentProgress, targetProgress);
+            //         // Gradually increase progress toward target
+            //         currentProgress += 0.4 * Math.random() * sizeFactor;
+            //         currentProgress = Math.min(currentProgress, targetProgress);
 
-                    // Update progress bar and percentage
-                    const percentageValue = Math.floor(currentProgress);
-                    progressBar.style.width = percentageValue + "%";
-                    percentageText.textContent = percentageValue + "%";
-                }, 200);
-            }
+            //         // Update progress bar and percentage
+            //         const percentageValue = Math.floor(currentProgress);
+            //         progressBar.style.width = percentageValue + "%";
+            //         percentageText.textContent = percentageValue + "%";
+            //     }, 200);
+            // }
 
             // Function to rotate through fun facts with animation
             function startFunFactsCarousel() {
