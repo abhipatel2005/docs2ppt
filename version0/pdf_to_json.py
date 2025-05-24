@@ -435,6 +435,6 @@ def convert_file_to_slide_json(file_path, output_json_path="slides.json"):
 
     print("✅ Done.")
 
-if __name__ == "__main__":
-    file_path = "D:\\temp\\uploads\\Assignment_IPDC.docx"  # or a DOCX file path
-    convert_file_to_slide_json(file_path)
+# if __name__ == "__main__":
+#     file_path = "D:\\temp\\uploads\\Assignment_IPDC.docx"  # or a DOCX file path
+#     convert_file_to_slide_json(file_path)

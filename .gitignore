@@ -5,3 +5,5 @@ pdf_images
 *.pptx
 output/
 uploads/
+docx_extracted/
+docx_images/
